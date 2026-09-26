@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Terms of Service | SmileShot</title>
+  <meta content="SmileShot B2B Terms of Service – Commercial conditions, medical device disclaimers, and BYOS framework." name="description">
+  <meta content="Terms of Service | SmileShot" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/smileshot-ai.webflow.css" rel="stylesheet" type="text/css">
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000212;
+      color: #9da3af;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:visited {
+      color: inherit;
+    }
+    .nav-link {
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .nav-link:visited {
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: #8a8f98 !important;
+    }
+    .nav-bg {
+      mask-image: linear-gradient(to bottom, black 48px, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, black 48px, transparent);
+    }
+    .doc-hero {
+      padding: 130px 24px 40px;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.25), transparent);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .doc-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .doc-meta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #8c88ff;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .doc-container {
+      max-width: 1040px;
+      margin: 40px auto 100px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+    }
+    @media (max-width: 860px) {
+      .doc-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .doc-toc {
+        display: none;
+      }
+    }
+    .doc-toc {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 0.85rem;
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+    }
+    .doc-toc h4 {
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .doc-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .doc-toc li {
+      margin-bottom: 8px;
+    }
+    .doc-toc a {
+      color: #8a8f98;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+    }
+    .doc-toc a:hover {
+      color: #ffffff;
+    }
+    .doc-content {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    @media (max-width: 600px) {
+      .doc-content {
+        padding: 24px;
+      }
+    }
+    .doc-content h2 {
+      color: #ffffff;
+      font-size: 1.45rem;
+      margin: 36px 0 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-weight: 600;
+    }
+    .doc-content h2:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    .doc-content p, .doc-content li {
+      color: #adb3bf;
+      font-size: 0.98rem;
+    }
+    .doc-content strong {
+      color: #ffffff;
+    }
+    .doc-content ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .doc-content li {
+      margin-bottom: 8px;
+    }
+    .alert-box {
+      background: rgba(102, 99, 246, 0.08);
+      border: 1px solid rgba(102, 99, 246, 0.25);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 0.95rem;
+      color: #d1d5ff;
+    }
+    .doc-actions-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .raw-badge {
+      color: #8c88ff;
+      background: rgba(102, 99, 246, 0.15);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+    .raw-badge:hover {
+      background: rgba(102, 99, 246, 0.3);
+    }
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #020412;
+      padding: 60px 24px 40px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    .footer-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 800px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      color: #8a8f98;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+    .footer-bottom {
+      max-width: 1120px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Nav -->
+    <nav class="nav">
+      <div class="nav-bg"></div>
+      <div class="container page-padding">
+        <div class="nav-inner">
+          <div class="nav-menu-wrap">
+            <div class="nav-menu">
+              <a href="index.html" class="nav-logo w-inline-block">
+                <div class="div-block"><img src="images/smieshot2.png" loading="lazy" width="125" alt="SmileShot Logo" style="display: block; max-width: 125px; height: auto;"></div>
+              </a>
+              <a href="index.html#section-features" class="nav-link w-inline-block">
+                <div>Features</div>
+              </a>
+              <a href="index.html#section-how-it-works" class="nav-link w-inline-block">
+                <div>How It Works</div>
+              </a>
+              <a href="about.html" class="nav-link w-inline-block">
+                <div>About</div>
+              </a>
+              <a href="agreements.html" class="nav-link w-inline-block">
+                <div>Legal & Compliance</div>
+              </a>
+            </div>
+            <div class="nav-btns">
+              <a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot" class="cta-button cta-button--nav w-inline-block">
+                <div>Register Interest</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="doc-hero">
+      <div class="container">
+        <h1>B2B Terms of Service</h1>
+        <div class="doc-meta">
+          <span>Solid Solutions Ltd (trading as SmileShot)</span>
+          <span>•</span>
+          <span>Version 1.0</span>
+          <span>•</span>
+          <span>Governed by English Law</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="doc-container">
+      <!-- Table of Contents -->
+      <aside class="doc-toc">
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="#sec-1">1. Contracting Parties & B2B Scope</a></li>
+          <li><a href="#sec-2">2. Regulatory & MHRA / SaMD Disclaimer</a></li>
+          <li><a href="#sec-3">3. BYOS & Sandboxed Folder Model</a></li>
+          <li><a href="#sec-4">4. UK GDPR & Data Protection</a></li>
+          <li><a href="#sec-5">5. Subscriptions & Data Retention</a></li>
+          <li><a href="#sec-6">6. Intellectual Property</a></li>
+          <li><a href="#sec-7">7. Liability Caps & Indemnity</a></li>
+          <li><a href="#sec-8">8. Governing Law & Jurisdiction</a></li>
+        </ul>
+      </aside>
+
+      <!-- Content -->
+      <main class="doc-content">
+        <div class="doc-actions-top">
+          <span style="font-size: 0.85rem; color: #8a8f98;">Effective Date: 21 September 2026</span>
+        </div>
+
+        <h2 id="sec-1">1. Contracting Parties, B2B Status & Commercial Scope</h2>
+        <ul>
+          <li><strong>Contracting Entity:</strong> This legally binding B2B SaaS agreement is entered into between <strong>Solid Solutions Ltd (trading as SmileShot)</strong>, a company registered in England and Wales under Company Registration Number 6425612, with registered office at 19 Linfields, Amersham, Buckinghamshire, HP7 9QH ("SmileShot", "Platform", "we", "us", or "Data Processor"), and the subscribing entity or clinician ("Subscriber", "Customer", "you", or "Data Controller").</li>
+          <li><strong>Authorised Users & Professional Standing:</strong> SmileShot is provided strictly for professional and commercial use by dental practices, clinics, and individual dental healthcare practitioners (including practice owners, self-employed associates, and clinical team members). The platform is not available to individual consumers.</li>
+          <li><strong>Service Scope (Lite Model Only):</strong> Access is limited strictly to the baseline clinical photo organisation model (Lite Tier). SmileShot provides an administrative, indexing, and workflow interface designed to organise, catalogue, and structure dental photography directories.</li>
+        </ul>
+
+        <h2 id="sec-2">2. Regulatory Perimeter & Medical Device Disclaimer (MHRA / SaMD)</h2>
+        <ul>
+          <li><strong>Non-Diagnostic Classification:</strong> SmileShot is an administrative organisation tool. It is not Software as a Medical Device (SaMD) under UK Medicines and Healthcare products Regulatory Agency (MHRA) regulations or EU Medical Device Regulations (MDR).</li>
+          <li><strong>Architectural Absence of Diagnostic Capability:</strong> Because SmileShot lacks the technical capability to view, render, inspect, or analyze raw image data, the platform does not and cannot evaluate clinical imagery, trace anatomical landmarks, measure soft-tissue or skeletal angles, or perform automated caries or pathology detection.</li>
+          <li><strong>Clinical Record-Keeping Reference:</strong> Stored photographic files serve solely as visual reference records maintained under the clinician’s independent professional judgement. Full, non-delegable clinical and diagnostic responsibility remains entirely with the treating registered dental practitioner.</li>
+        </ul>
+
+        <h2 id="sec-3">3. Photo Organisation & Third-Party Cloud Storage Architecture</h2>
+        <ul>
+          <li><strong>Bring Your Own Storage (BYOS) Model:</strong> SmileShot does not provide primary hosting, backup repositories, or cloud storage for raw clinical photography. All visual assets reside within the Subscriber's independently managed third-party cloud storage provider (e.g., Google Drive, Microsoft OneDrive, Dropbox).</li>
+          <li><strong>Restricted Sandboxed Access ("SmileShot" Folder Only):</strong> Upon account authorisation, the Subscriber grants SmileShot technical access strictly and exclusively to a single, designated root folder labelled <strong>"SmileShot"</strong>. SmileShot does not request, hold, or execute permissions to access any directories outside this folder.</li>
+          <li><strong>Metadata-Only Architecture & Technical Inability to View Imagery:</strong> SmileShot’s platform infrastructure <strong>lacks the technical capability, access permissions, and functionality to view, open, inspect, render, or visually process</strong> underlying image files. Platform operations are technically restricted solely to directory paths, folder names, timestamps, and indexing metadata.</li>
+          <li><strong>Patient Photography Consent Warranty:</strong> The Subscriber warrants that all required patient consents for clinical dental imagery—in compliance with GDC Standards for the Dental Team and Caldicott Principles—have been lawfully obtained prior to cataloguing imagery.</li>
+        </ul>
+
+        <h2 id="sec-4">4. Data Protection & UK GDPR Compliance</h2>
+        <ul>
+          <li><strong>Subscriber:</strong> Data Controller for all Patient Identifiable Data (PID) and clinical healthcare data.</li>
+          <li><strong>Solid Solutions Ltd:</strong> Data Processor acting exclusively under documented instructions.</li>
+          <li><strong>Security Safeguards:</strong> Platform metadata and API tokens are encrypted in transit via TLS 1.3 and at rest using AES-256 within certified UK/EEA infrastructure.</li>
+          <li><strong>Strict Model Training Restrictions:</strong> Practice metadata and folder structures are never ingested, scraped, or utilized to train external or public AI models.</li>
+          <li><strong>Security Incident Notification:</strong> Notice provided without undue delay (and within 48 hours) upon confirming any security breach compromising credentials or platform databases.</li>
+        </ul>
+
+        <h2 id="sec-5">5. Subscriptions, Fees & Data Retention</h2>
+        <ul>
+          <li><strong>Billing & Renewal:</strong> Subscriptions renew automatically on a monthly/annual basis unless cancelled in writing at least 30 days prior to renewal.</li>
+          <li><strong>Continuous Ownership & Offboarding:</strong> Because raw clinical photographs remain continuously inside the Subscriber's own cloud repository, the Subscriber retains uninterrupted possession of all original photos upon contract termination. SmileShot revokes OAuth tokens and permanently purges indexing metadata within 30 days of account closure.</li>
+        </ul>
+
+        <h2 id="sec-6">6. Intellectual Property Rights</h2>
+        <ul>
+          <li><strong>Platform IP:</strong> Solid Solutions Ltd retains exclusive ownership of software code, interface workflows, organizational logic, taxonomy models, and trademarks.</li>
+          <li><strong>Subscriber Content Ownership:</strong> The Subscriber retains absolute, unrestricted ownership of all clinical imagery, folder naming structures, and practice branding.</li>
+        </ul>
+
+        <h2 id="sec-7">7. Limitation of Liability, Warranties & Indemnity</h2>
+        <ul>
+          <li><strong>"As-Is" Service Standard:</strong> SmileShot is provided on an "as-is" and "as-available" basis using commercially reasonable skill and care.</li>
+          <li><strong>Third-Party Infrastructure Disclaimer:</strong> Solid Solutions Ltd disclaims liability for interruptions, outages, or data loss occurring within the Subscriber's third-party cloud storage environment.</li>
+          <li><strong>Clinical Outcome Disclaimer:</strong> Solid Solutions Ltd is not liable for clinical decisions or diagnostic interpretations made by practitioners using indexed imagery.</li>
+          <li><strong>Aggregate Liability Cap:</strong> Total aggregate liability arising out of this agreement is strictly capped at the total subscription fees paid by the Subscriber in the 12 months preceding the claim.</li>
+        </ul>
+
+        <h2 id="sec-8">8. Governing Law & Dispute Resolution</h2>
+        <p>This agreement is governed by and construed in accordance with the laws of <strong>England and Wales</strong>, and the parties submit to the exclusive jurisdiction of the English courts.</p>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div style="margin-bottom: 16px;">
+            <img src="images/smieshot2.png" alt="SmileShot Logo" width="110">
+          </div>
+          <p style="color: #9da3af; font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
+            Designed by dentists, for dentists. Structure, index, and retrieve clinical dental photography with machine-level precision and zero image exposure.
+          </p>
+          <p style="font-size: 0.8rem; color: #6b7280;">
+            Solid Solutions Ltd (trading as SmileShot)<br>
+            Company Registration: 6425612 (England & Wales)<br>
+            19 Linfields, Little Chalfont, Amersham, Buckinghamshire, HP7 9QH
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#section-features">Features</a></li>
+            <li><a href="index.html#section-how-it-works">How It Works</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot">Register Interest</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal & Compliance</h4>
+          <ul>
+            <li><a href="dpa.html">Data Processing Agreement (DPA)</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="agreements.html">Legal & Compliance Hub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact & Security</h4>
+          <ul>
+            <li><a href="mailto:info@smileshot.ai">info@smileshot.ai</a></li>
+            <li style="margin-top: 12px; font-size: 0.82rem; color: #9da3af;">
+              UK GDPR Compliant<br>
+              TLS 1.3 & AES-256 Encrypted<br>
+              Zero Image Hosting Architecture
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Solid Solutions Ltd (trading as SmileShot). All rights reserved.</div>
+        <div>Dental Photography Management Platform</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

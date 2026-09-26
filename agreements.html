@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Legal & Compliance Hub | SmileShot</title>
+  <meta content="Review SmileShot legal agreements, Data Processing Agreement (DPA), Privacy Policy, and Terms of Service." name="description">
+  <meta content="Legal & Compliance Hub | SmileShot" property="og:title">
+  <meta content="Review SmileShot legal agreements, Data Processing Agreement (DPA), Privacy Policy, and Terms of Service." property="og:description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/smileshot-ai.webflow.css" rel="stylesheet" type="text/css">
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-smoothing: antialiased;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000212;
+      color: #8a8f98;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:visited {
+      color: inherit;
+    }
+    .nav-link {
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .nav-link:visited {
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: #8a8f98 !important;
+    }
+    .nav-bg {
+      mask-image: linear-gradient(to bottom, black 48px, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, black 48px, transparent);
+    }
+    .legal-hero {
+      padding: 140px 24px 60px;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.25), transparent);
+    }
+    .legal-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .legal-hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: #a1a7b4;
+    }
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(102, 99, 246, 0.12);
+      border: 1px solid rgba(102, 99, 246, 0.3);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #d1d5ff;
+      font-weight: 500;
+    }
+    .cards-container {
+      max-width: 1120px;
+      margin: 0 auto 100px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .legal-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .legal-card:hover {
+      border-color: rgba(102, 99, 246, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(102, 99, 246, 0.15);
+    }
+    .legal-card-header {
+      margin-bottom: 16px;
+    }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(102, 99, 246, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8c88ff;
+      margin-bottom: 20px;
+    }
+    .legal-card h2 {
+      font-size: 1.45rem;
+      color: #ffffff;
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+    .legal-card .version-tag {
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .legal-card p {
+      color: #9da3af;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .card-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 20px;
+    }
+    .btn-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #ffffff;
+      background: rgba(102, 99, 246, 0.25);
+      border: 1px solid rgba(102, 99, 246, 0.4);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-read:hover {
+      background: rgba(102, 99, 246, 0.45);
+      border-color: #8c88ff;
+    }
+    .raw-link {
+      color: #6b7280;
+      font-size: 0.82rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .raw-link:hover {
+      color: #d1d5db;
+    }
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #020412;
+      padding: 60px 24px 40px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    .footer-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 800px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      color: #8a8f98;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+    .footer-bottom {
+      max-width: 1120px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-bg"></div>
+      <div class="container page-padding">
+        <div class="nav-inner">
+          <div class="nav-menu-wrap">
+            <div class="nav-menu">
+              <a href="index.html" class="nav-logo w-inline-block">
+                <div class="div-block"><img src="images/smieshot2.png" loading="lazy" width="125" alt="SmileShot Logo" style="display: block; max-width: 125px; height: auto;"></div>
+              </a>
+              <a href="index.html#section-features" class="nav-link w-inline-block">
+                <div>Features</div>
+              </a>
+              <a href="index.html#section-how-it-works" class="nav-link w-inline-block">
+                <div>How It Works</div>
+              </a>
+              <a href="about.html" class="nav-link w-inline-block">
+                <div>About</div>
+              </a>
+              <a href="agreements.html" aria-current="page" class="nav-link w-inline-block w--current">
+                <div>Legal & Compliance</div>
+              </a>
+            </div>
+            <div class="nav-btns">
+              <a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot" class="cta-button cta-button--nav w-inline-block">
+                <div>Register Interest</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header / Hero -->
+    <header class="legal-hero">
+      <div class="container">
+        <h1>Trust, Compliance & Legal Hub</h1>
+        <p>SmileShot is engineered with privacy-by-design for dental healthcare practitioners. Review our statutory agreements, Data Processing Agreement (UK GDPR Art. 28), and privacy framework.</p>
+        <div class="trust-badges">
+          <div class="badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            UK GDPR Article 28 Compliant
+          </div>
+          <div class="badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Bring Your Own Storage (BYOS)
+          </div>
+          <div class="badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2v-2zm0-10h2v8h-2V6z"/></svg>
+            Zero-Image Storage Architecture
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Agreements Grid -->
+    <main class="cards-container">
+      <!-- DPA -->
+      <article class="legal-card">
+        <div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="version-tag">Version 1.0 • UK GDPR Article 28</div>
+          <h2>Data Processing Agreement (DPA)</h2>
+          <p>Governs statutory data processing responsibilities between Subscriber (Data Controller) and Solid Solutions Ltd (Data Processor). Covers BYOS boundaries, sandboxed folder access, ephemeral Daylist RAM processing, and Sub-processor disclosures.</p>
+        </div>
+        <div class="card-actions">
+          <a href="dpa.html" class="btn-read">
+            Read DPA
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Privacy Policy -->
+      <article class="legal-card">
+        <div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="version-tag">Version 1.0 • Privacy Framework</div>
+          <h2>Privacy Policy</h2>
+          <p>Comprehensive overview of how SmileShot handles practitioner account information, metadata security, ephemeral AI scheduling extraction, cookies, user rights, and technical safeguards under UK Data Protection legislation.</p>
+        </div>
+        <div class="card-actions">
+          <a href="privacy.html" class="btn-read">
+            Read Privacy Policy
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Terms of Service -->
+      <article class="legal-card">
+        <div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="version-tag">Version 1.0 • B2B Terms</div>
+          <h2>Terms of Service</h2>
+          <p>B2B SaaS subscription agreement setting forth service scope, MHRA / SaMD non-diagnostic classification, Bring Your Own Storage (BYOS) terms, intellectual property, liability caps, and jurisdiction under England & Wales law.</p>
+        </div>
+        <div class="card-actions">
+          <a href="terms.html" class="btn-read">
+            Read Terms
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div style="margin-bottom: 16px;">
+            <img src="images/smieshot2.png" alt="SmileShot Logo" width="110">
+          </div>
+          <p style="color: #9da3af; font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
+            Designed by dentists, for dentists. Structure, index, and retrieve clinical dental photography with machine-level precision and zero image exposure.
+          </p>
+          <p style="font-size: 0.8rem; color: #6b7280;">
+            Solid Solutions Ltd (trading as SmileShot)<br>
+            Company Registration: 6425612 (England & Wales)<br>
+            19 Linfields, Little Chalfont, Amersham, Buckinghamshire, HP7 9QH
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#section-features">Features</a></li>
+            <li><a href="index.html#section-how-it-works">How It Works</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot">Register Interest</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal & Compliance</h4>
+          <ul>
+            <li><a href="dpa.html">Data Processing Agreement (DPA)</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="agreements.html">Legal & Compliance Hub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact & Security</h4>
+          <ul>
+            <li><a href="mailto:info@smileshot.ai">info@smileshot.ai</a></li>
+            <li style="margin-top: 12px; font-size: 0.82rem; color: #9da3af;">
+              UK GDPR Compliant<br>
+              TLS 1.3 & AES-256 Encrypted<br>
+              Zero Image Hosting Architecture
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Solid Solutions Ltd (trading as SmileShot). All rights reserved.</div>
+        <div>Dental Photography Management Platform</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -375,6 +375,59 @@
       scroll-snap-align: center;
     }
   }
+  .site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #020412;
+    padding: 60px 24px 40px;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+  .footer-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  @media (max-width: 800px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+  .footer-col h4 {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-col li {
+    margin-bottom: 10px;
+  }
+  .footer-col a {
+    color: #8a8f98;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover {
+    color: #ffffff;
+  }
+  .footer-bottom {
+    max-width: 1120px;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.82rem;
+  }
 </style>
     </div>
     <div class="animations-css w-embed">
@@ -648,7 +701,7 @@
           <div class="nav-menu-wrap">
             <div class="nav-menu">
               <a href="index.html" aria-current="page" class="nav-logo w-inline-block w--current">
-                <div class="div-block"><img src="images/smieshot2.png" loading="lazy" width="119" sizes="119px" alt="" srcset="images/smieshot2-p-500.png 500w, images/smieshot2-p-800.png 800w, images/smieshot2-p-1080.png 1080w, images/smieshot2-p-1600.png 1600w, images/smieshot2-p-2000.png 2000w, images/smieshot2-p-2600.png 2600w, images/smieshot2.png 3496w"></div>
+                <div class="div-block"><img src="images/smieshot2.png" loading="lazy" width="125" alt="SmileShot Logo" style="display: block; max-width: 125px; height: auto;"></div>
               </a>
               <a href="#section-features" class="nav-link w-inline-block">
                 <div>Features</div>
@@ -656,14 +709,16 @@
               <a href="#section-how-it-works" class="nav-link w-inline-block">
                 <div>How It Works</div>
               </a>
-              <a href="about.html" class="nav-link extra w-inline-block">
+              <a href="about.html" class="nav-link w-inline-block">
                 <div class="text-block-11">About</div>
+              </a>
+              <a href="agreements.html" class="nav-link w-inline-block">
+                <div>Legal & Compliance</div>
               </a>
             </div>
             <div class="nav-btns">
-              <a href="#" class="nav-link nav-link--log-in w-inline-block"></a>
-              <a href="#" class="cta-button cta-button--nav w-inline-block">
-                <div>Sign up</div>
+              <a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot" class="cta-button cta-button--nav w-inline-block">
+                <div>Register Interest</div>
               </a>
             </div>
           </div>
@@ -677,7 +732,7 @@
             <div class="hero-header">
               <h1 class="hero-heading">Your dental photography reimagined</h1>
               <h2 class="subheading subheading--hero">Designed by dentists, for dentists.</h2>
-              <a href="#" class="cta-button w-inline-block">
+              <a href="#section-features" class="cta-button w-inline-block">
                 <div>Get started</div>
                 <div class="svg-embed w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
                     <path d="M5.46967 11.4697C5.17678 11.7626 5.17678 12.2374 5.46967 12.5303C5.76256 12.8232 6.23744 12.8232 6.53033 12.5303L10.5303 8.53033C10.8207 8.23999 10.8236 7.77014 10.5368 7.47624L6.63419 3.47624C6.34492 3.17976 5.87009 3.17391 5.57361 3.46318C5.27713 3.75244 5.27128 4.22728 5.56054 4.52376L8.94583 7.99351L5.46967 11.4697Z"></path>
@@ -725,47 +780,47 @@
               <div class="text-block-2">Features</div>
             </a>
             <h2 class="heading-medium">The future of clinical photography management</h2>
-            <h2 class="subheading">SmileShot runs seamlessly in the background, structuring your clinical photography workflow with machine-level precision.<br></h2>
           </div>
           <div class="feature-grid-copy">
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992e92-2e7d93b4" class="feature-grid-item">
               <div class="feature-grid-icon w-embed"><svg width="15" height="14" viewbox="0 0 15 14" fill="currentColor">
                   <path d="M11.0002 6C13.2094 6 15.0002 7.79086 15.0002 10C15.0002 12.2091 13.2094 14 11.0002 14C8.79111 14 7.00024 12.2091 7.00024 10C7.00024 7.79086 8.79111 6 11.0002 6ZM10.7461 0C12.8172 0 14.4961 1.67893 14.4961 3.75V4.24561C14.4961 4.65982 14.1603 4.99561 13.7461 4.99561C13.3319 4.99561 12.9961 4.65982 12.9961 4.24561V3.75C12.9961 2.50736 11.9887 1.5 10.7461 1.5H4.74609C3.50345 1.5 2.49609 2.50736 2.49609 3.75V9.97046C2.49609 11.2131 3.50345 12.2205 4.74609 12.2205H6.05259C6.46681 12.2205 6.80259 12.5562 6.80259 12.9705C6.80259 13.3847 6.46681 13.7205 6.05259 13.7205H4.74609C2.67503 13.7205 0.996094 12.0415 0.996094 9.97046V3.75C0.996094 1.67893 2.67503 0 4.74609 0H10.7461ZM11.0002 7.25488L10.8985 7.26173C10.5657 7.30688 10.3022 7.57032 10.2571 7.90311L10.2502 8.00488V9.25088L9.00104 9.25L8.89926 9.25674C8.56642 9.30153 8.3027 9.56469 8.2572 9.89744L8.25024 9.9992L8.25698 10.101C8.30178 10.4338 8.56494 10.6975 8.89769 10.743L8.99945 10.75L10.2502 10.7509V12.0036L10.2571 12.1054C10.3022 12.4382 10.5657 12.7016 10.8985 12.7468L11.0002 12.7536L11.102 12.7468C11.4348 12.7016 11.6982 12.4382 11.7434 12.1054L11.7502 12.0036V10.7529L12.9994 10.7542L13.1012 10.7475C13.4341 10.7027 13.6978 10.4395 13.7433 10.1068L13.7502 10.005L13.7435 9.90326C13.6987 9.57042 13.4355 9.3067 13.1028 9.2612L13.001 9.25424L11.7502 9.25288V8.00488L11.7434 7.90311C11.6982 7.57032 11.4348 7.30688 11.102 7.26173L11.0002 7.25488Z"></path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Smart Search.</span> Break larger tasks into smaller issues.</div>
+              <div class="display-inline"><span class="text-color-white">Bring Your Own Storage.</span> Connect Google Drive, OneDrive, or Dropbox with zero raw image hosting on our servers.</div>
             </div>
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992e98-2e7d93b4" class="feature-grid-item">
               <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14.9408 8.91426L12.9576 8.65557C12.9855 8.4419 13 8.22314 13 8C13 7.77686 12.9855 7.5581 12.9576 7.34443L14.9408 7.08573C14.9799 7.38496 15 7.69013 15 8C15 8.30987 14.9799 8.61504 14.9408 8.91426ZM14.4688 5.32049C14.2328 4.7514 13.9239 4.22019 13.5538 3.73851L11.968 4.95716C12.2328 5.30185 12.4533 5.68119 12.6214 6.08659L14.4688 5.32049ZM12.2615 2.4462L11.0428 4.03204C10.6981 3.76716 10.3188 3.54673 9.91341 3.37862L10.6795 1.53116C11.2486 1.76715 11.7798 2.07605 12.2615 2.4462ZM8.91426 1.05917L8.65557 3.04237C8.4419 3.01449 8.22314 3 8 3C7.77686 3 7.5581 3.01449 7.34443 3.04237L7.08574 1.05917C7.38496 1.02013 7.69013 1 8 1C8.30987 1 8.61504 1.02013 8.91426 1.05917ZM5.32049 1.53116L6.08659 3.37862C5.68119 3.54673 5.30185 3.76716 4.95716 4.03204L3.73851 2.4462C4.22019 2.07605 4.7514 1.76715 5.32049 1.53116ZM2.4462 3.73851L4.03204 4.95716C3.76716 5.30185 3.54673 5.68119 3.37862 6.08659L1.53116 5.32049C1.76715 4.7514 2.07605 4.22019 2.4462 3.73851ZM1.05917 7.08574C1.02013 7.38496 1 7.69013 1 8C1 8.30987 1.02013 8.61504 1.05917 8.91426L3.04237 8.65557C3.01449 8.4419 3 8.22314 3 8C3 7.77686 3.01449 7.5581 3.04237 7.34443L1.05917 7.08574ZM1.53116 10.6795L3.37862 9.91341C3.54673 10.3188 3.76716 10.6981 4.03204 11.0428L2.4462 12.2615C2.07605 11.7798 1.76715 11.2486 1.53116 10.6795ZM3.73851 13.5538L4.95716 11.968C5.30185 12.2328 5.68119 12.4533 6.08659 12.6214L5.32049 14.4688C4.7514 14.2328 4.22019 13.9239 3.73851 13.5538ZM7.08574 14.9408L7.34443 12.9576C7.5581 12.9855 7.77686 13 8 13C8.22314 13 8.4419 12.9855 8.65557 12.9576L8.91427 14.9408C8.61504 14.9799 8.30987 15 8 15C7.69013 15 7.38496 14.9799 7.08574 14.9408ZM10.6795 14.4688L9.91341 12.6214C10.3188 12.4533 10.6981 12.2328 11.0428 11.968L12.2615 13.5538C11.7798 13.9239 11.2486 14.2328 10.6795 14.4688ZM13.5538 12.2615L11.968 11.0428C12.2328 10.6981 12.4533 10.3188 12.6214 9.91341L14.4688 10.6795C14.2328 11.2486 13.924 11.7798 13.5538 12.2615Z"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14.9408 8.91426L12.9576 8.65557C12.9855 8.4419 13 8.22314 13 8C13 7.77686 12.9855 7.5581 12.9576 7.34443L14.9408 7.08573C14.9799 7.38496 15 7.69013 15 8C15 8.30987 14.9799 8.61504 14.9408 8.91426ZM14.4688 5.32049C14.2328 4.7514 13.9239 4.22019 13.5538 3.73851L11.968 4.95716C12.2328 5.30185 12.4533 5.68119 12.6214 6.08659L14.4688 5.32049ZM12.2615 2.4462L11.0428 4.03204C10.6981 3.76716 10.3188 3.54673 9.91341 3.37862L10.6795 1.53116C11.2486 1.76715 11.7798 2.07605 12.2615 2.4462ZM8.91426 1.05917L8.65557 3.04237C8.4419 3.01449 8.22314 3 8 3C7.77686 3 7.5581 3.01449 7.34443 3.04237L7.08574 1.05917C7.38496 1.02013 7.69013 1 8 1C8.30987 1 8.61504 1.02013 8.91426 1.05917ZM5.32049 1.53116L6.08659 3.37862C5.68119 3.54673 5.30185 3.76716 4.95716 4.03204L3.73851 2.4462C4.22019 2.07605 4.7514 1.76715 5.32049 1.53116ZM2.4462 3.73851L4.03204 4.95716C3.76716 5.30185 3.54673 5.68119 3.37862 6.08659L1.53116 5.32049C1.76715 4.7514 2.07605 4.22019 2.4462 3.73851ZM1.05917 7.08574C1.02013 7.38496 1 7.69013 1 8C1 8.30987 1.02013 8.61504 1.05917 8.91426L3.04237 8.65557C3.01449 8.4419 3 8.22314 3 8C3 7.77686 3.01449 7.5581 3.04237 7.34443L1.05917 7.08574ZM1.53116 10.6795L3.37862 9.91341C3.54673 10.3188 3.76716 10.6981 4.03204 11.0428L2.4462 12.2615C2.07605 11.7798 1.76748 11.2486 1.53116 10.6795ZM3.73851 13.5538L4.95716 11.968C5.30185 12.2328 5.68119 12.4533 6.08659 12.6214L5.32049 14.4688C4.7514 14.2328 4.22019 13.9239 3.73851 13.5538ZM7.08574 14.9408L7.34443 12.9576C7.5581 12.9855 7.77686 13 8 13C8.22314 13 8.4419 12.9855 8.65557 12.9576L8.91427 14.9408C8.61504 14.9799 8.30987 15 8 15C7.69013 15 7.38496 14.9799 7.08574 14.9408ZM10.6795 14.4688L9.91341 12.6214C10.3188 12.4533 10.6981 12.2328 11.0428 11.968L12.2615 13.5538C11.7798 13.9239 11.2486 14.2328 10.6795 14.4688ZM13.5538 12.2615L11.968 11.0428C12.2328 10.6981 12.4533 10.3188 12.6214 9.91341L14.4688 10.6795C14.2328 11.2486 13.924 11.7798 13.5538 12.2615Z"></path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">AI Driven. </span>Linear will auto-close and auto-archive issues.</div>
+              <div class="display-inline"><span class="text-color-white">Ephemeral Daylist AI.</span> Instant schedule ingestion in transient RAM with zero storage or AI model training.</div>
             </div>
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992e9e-2e7d93b4" class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="-1 -1 15 15" fill="currentColor">
-                  <path d="M10.5714 7C10.5714 8.97245 8.97245 10.5714 7 10.5714L6.99975 3.42857C8.9722 3.42857 10.5714 5.02755 10.5714 7Z"></path>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7 12.5C10.0376 12.5 12.5 10.0376 12.5 7C12.5 3.96243 10.0376 1.5 7 1.5C3.96243 1.5 1.5 3.96243 1.5 7C1.5 10.0376 3.96243 12.5 7 12.5ZM7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14Z"></path>
+              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Intelligent Photo Tags.</span> Define unique issue states for each team.</div>
+              <div class="display-inline"><span class="text-color-white">Offline Local Folders.</span> Works completely offline. Organise captures straight into local watch folders and cloud sync.</div>
             </div>
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992ea4-2e7d93b4" class="feature-grid-item">
               <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6541 10.7952L14.7544 11.6213C14.8576 11.6618 14.9394 11.7434 14.9801 11.8466C15.0511 12.0264 14.9828 12.2268 14.827 12.3284L14.755 12.3656L8.35645 14.8924C8.15935 14.9703 7.94372 14.9831 7.74052 14.9309L7.62035 14.8918L1.25259 12.3653C1.1499 12.3246 1.06864 12.2432 1.02806 12.1404C0.957068 11.9607 1.02536 11.7603 1.1812 11.6587L1.25319 11.6215L3.34307 10.7962L7.06917 12.2751C7.65895 12.5091 8.31525 12.5097 8.9054 12.2766L12.6541 10.7952ZM12.6541 6.77688L14.7544 7.60289C14.8576 7.64346 14.9394 7.72508 14.9801 7.82824C15.0511 8.00803 14.9828 8.20839 14.827 8.31004L14.755 8.3472L10.6001 9.98825L9.619 10.375L8.35645 10.8741L8.317 10.886L8.23566 10.9132C8.20301 10.9215 8.17004 10.9282 8.13688 10.9331C8.12585 10.9346 8.11547 10.936 8.10507 10.9372C8.02541 10.9468 7.94422 10.9464 7.86397 10.9363L7.74052 10.9126L7.62035 10.8735L6.391 10.385L5.38907 9.98825L1.25259 8.34697C1.1499 8.30623 1.06864 8.22483 1.02806 8.12208C0.957068 7.94229 1.02536 7.74192 1.1812 7.64029L1.25319 7.60312L3.34307 6.77788L7.06917 8.25677C7.65895 8.49078 8.31525 8.4913 8.9054 8.25824L12.6541 6.77688ZM7.62186 1.06989C7.85734 0.976906 8.11932 0.976697 8.35494 1.06931L14.7544 3.58452C14.8576 3.62509 14.9394 3.70671 14.9801 3.80987C15.0612 4.01534 14.9605 4.24769 14.755 4.32884L10.6001 5.96988L8.35565 6.856L8.27468 6.88396C8.25405 6.8901 8.23326 6.89557 8.21236 6.90036C8.09824 6.92674 7.98013 6.93258 7.86397 6.91788L7.74052 6.89419L7.62035 6.8551L1.25259 4.3286C1.1499 4.28786 1.06864 4.20646 1.02806 4.10371C0.946925 3.89823 1.04772 3.66589 1.25319 3.58475L7.62186 1.06989Z"></path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Automatic Patient Folders.</span> See only what’s relevant for you.</div>
+              <div class="display-inline"><span class="text-color-white">Automatic Patient Folders.</span> Auto-detect patient sessions and structure folders without manual renaming.</div>
             </div>
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992eaa-2e7d93b4" class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
-                  <path d="M8 1C4.13401 1 1 3.262 1 7C1 8.83211 1.75288 10.3096 2.97581 11.3401C2.22526 13.7801 2.07619 15 2.52874 15C2.93754 15 3.96564 14.2301 5.61306 12.6902C6.35802 12.8937 7.16181 13 8 13C11.866 13 15 10.6678 15 7C15 3.33217 11.866 1 8 1Z"></path>
+              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Cross-Device Sync.</span> Collaborate on issues without losing context.</div>
+              <div class="display-inline"><span class="text-color-white">Frontend Web Dashboard.</span> Clean web application to browse patient timelines and high-res photo galleries.</div>
             </div>
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992eb0-2e7d93b4" class="feature-grid-item">
               <div class="feature-grid-icon w-embed"><svg width="14" height="14" viewbox="0 0 14 14" fill="currentColor">
                   <path d="M10.25 0C12.3211 0 14 1.67893 14 3.75V8.60502C14 9.07085 13.8143 9.51745 13.484 9.84591L9.81859 13.4909C9.49069 13.817 9.04705 14 8.58461 14H3.75C1.67893 14 0 12.3211 0 10.25V3.75C0 1.67893 1.67893 0 3.75 0H10.25ZM10.25 1.5H3.75C2.50736 1.5 1.5 2.50736 1.5 3.75V10.25C1.5 11.4926 2.50736 12.5 3.75 12.5H6.999L7 9.75C7 8.28747 8.1417 7.0916 9.58248 7.00502L9.75 7H12.5V3.75C12.5 2.50736 11.4926 1.5 10.25 1.5ZM12.5 8.5H9.75C9.05964 8.5 8.5 9.05964 8.5 9.75L8.499 12.5H8.58461C8.65068 12.5 8.71405 12.4739 8.7609 12.4273L12.4263 8.78229C12.4735 8.73537 12.5 8.67157 12.5 8.60502V8.5Z"></path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">End-to-End Encryption.</span> Guide your team to write effective issues.<br></div>
+              <div class="display-inline"><span class="text-color-white">UK GDPR &amp; DPA Ready.</span> Bank-grade TLS 1.3 &amp; AES-256 encryption engineered strictly for dental teams.<br></div>
             </div>
-          </div>
+          </div></div>
           <div class="highlights-wrap">
             <div id="w-node-_8eee35df-ad3d-02c4-63b6-4e63ab5fde44-2e7d93b4" class="highlights-card"><img src="images/068bb04f-707a-4a86-b4fb-9991887fdf91.png" loading="lazy" width="248" sizes="(max-width: 479px) 100vw, 248px" alt="" srcset="images/068bb04f-707a-4a86-b4fb-9991887fdf91-p-500.png 500w, images/068bb04f-707a-4a86-b4fb-9991887fdf91.png 588w" class="image-5 extra">
               <div class="keyboard"></div>
@@ -779,7 +834,7 @@
               <div class="lightning"></div>
               <div class="highlights-card-content">
                 <h3 class="card-heading text-color-white">From chaos to clarity. Instantly.</h3>
-                <div class="text-block-8">Every image tagged, sorted, and synced with zero manual steps.<br></div>
+                <div class="text-block-8">Every image organised, sorted, and synced with zero manual steps.<br></div>
               </div>
             </div>
             <div id="w-node-_034c70b5-52e0-92db-2718-a55361774349-2e7d93b4" class="highlights-card">
@@ -912,7 +967,7 @@
                       <div class="svg-embed w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2105 4C10.6337 4 11.0126 4.18857 11.24 4.48L14 8L11.24 11.52C11.0126 11.8114 10.6337 12 10.2105 12L3.26316 11.9943C2.56842 11.9943 2 11.4857 2 10.8571V5.14286C2 4.51429 2.56842 4.00571 3.26316 4.00571L10.2105 4ZM11.125 9C11.6773 9 12.125 8.55228 12.125 8C12.125 7.44772 11.6773 7 11.125 7C10.5727 7 10.125 7.44772 10.125 8C10.125 8.55228 10.5727 9 11.125 9Z"></path>
                         </svg></div>
-                      <div>Tags</div>
+                      <div>Procedure</div>
                     </div>
                   </div>
                 </div>
@@ -928,41 +983,46 @@
       </section>
       <div id="section-how-it-works" class="section-how-it-works">
         <div class="section-header-hiw">
-          <a href="#" class="cta-button-hiw w-inline-block">
+          <a href="#section-how-it-works" class="cta-button-hiw w-inline-block">
             <div class="text-block-2">How it works</div>
           </a>
-          <h2 class="heading-medium">Works like magic.</h2>
-          <h2 class="subheading">From camera to organised folders in a snap.<br></h2>
+          <h2 class="heading-medium">Seamless from capture to cloud.</h2>
+          <h2 class="subheading">Transform clinical dental photography from a manual chore into an automated, compliant workflow.<br></h2>
         </div>
         <div class="steps-clone">
+          <!-- Step 1 -->
           <div class="step-block">
-            <div class="img-block"><img sizes="(max-width: 660px) 100vw, 660px" srcset="images/Screenshot-2025-07-27-at-13.40.10-Photoroom-p-500.png 500w, images/Screenshot-2025-07-27-at-13.40.10-Photoroom.png 660w" alt="" src="images/Screenshot-2025-07-27-at-13.40.10-Photoroom.png" loading="lazy" class="image-3"></div>
+            <div class="img-block"><img sizes="(max-width: 480px) 100vw, 480px" alt="Step 1: Ingest Daylist &amp; Connect BYOS Storage" src="images/step1-daylist.svg" loading="lazy" style="max-width: 100%; height: auto; border-radius: 16px;"></div>
             <div class="dot"></div>
             <div class="highlights-card-timeline">
               <div class="highlights-card-content-hiw">
                 <h3 class="card-heading text-color-white">Step 1</h3>
-                <div class="text-block-6">Capture &amp; Upload, Seamlessly<br></div>
+                <div class="text-block-6">Ingest Daylist &amp; Connect Storage<br></div>
               </div>
-              <div class="text-block-4">Start a new photo session effortlessly - just shoot. SmileShot intuitively detects new patient sets and prepares them for seamless processing. No switching apps, no renaming files, no workflow interruptions.</div>
+              <div class="text-block-4">Connect your practice cloud storage (Google Drive, OneDrive, or Dropbox) under our Bring Your Own Storage (BYOS) model. Upload or snap your daily clinic Daylist—SmileShot’s ephemeral OCR reads patient names and appointment slots in transient RAM with zero permanent storage or AI model training.</div>
             </div>
           </div>
+
+          <!-- Step 2 -->
           <div class="step-block">
             <div class="highlights-card-timeline">
               <div class="highlights-card-content-hiw">
                 <h3 class="card-heading text-color-white">Step 2</h3>
-                <div class="text-block-3">Automatic Organisation<br></div>
+                <div class="text-block-3">Capture with Any Camera<br></div>
               </div>
-              <div class="text-block-4">SmileShot intelligently detects the start of each patient session, sorts images into structured folders, and auto-tags them by date, picture type, and specific treatment.</div>
+              <div class="text-block-4">Capture clinical photos naturally during appointments using any DSLR, mirrorless camera, intraoral device, or smartphone. SmileShot requires no proprietary hardware—exact capture timestamps are automatically preserved in standard EXIF image metadata.</div>
             </div>
             <div class="scoll-wrap">
               <div class="scroll-animate"></div>
               <div class="scroll-base"></div>
             </div>
             <div class="dot"></div>
-            <div class="img-block extra"><img sizes="(max-width: 540px) 100vw, 540px" srcset="images/Screenshot-2025-07-27-at-13.40.18-Photoroom-p-500.png 500w, images/Screenshot-2025-07-27-at-13.40.18-Photoroom.png 540w" alt="" src="images/Screenshot-2025-07-27-at-13.40.18-Photoroom.png" loading="lazy" class="image"></div>
+            <div class="img-block extra"><img sizes="(max-width: 480px) 100vw, 480px" alt="Step 2: Capture with Any Camera or Phone" src="images/step2-camera-capture.svg" loading="lazy" style="max-width: 100%; height: auto; border-radius: 16px;"></div>
           </div>
+
+          <!-- Step 3 -->
           <div class="step-block">
-            <div class="img-block"><img sizes="(max-width: 630px) 100vw, 630px" srcset="images/Screenshot-2025-07-27-at-13.40.38-Photoroom-p-500.png 500w, images/Screenshot-2025-07-27-at-13.40.38-Photoroom.png 630w" alt="" src="images/Screenshot-2025-07-27-at-13.40.38-Photoroom.png" loading="lazy" class="image-2"></div>
+            <div class="img-block"><img sizes="(max-width: 480px) 100vw, 480px" alt="Step 3: Offline Companion App &amp; Local Auto-Sorting" src="images/step3-offline-app.svg" loading="lazy" style="max-width: 100%; height: auto; border-radius: 16px;"></div>
             <div class="dot"></div>
             <div class="scoll-wrap">
               <div class="scroll-animate"></div>
@@ -971,264 +1031,102 @@
             <div class="highlights-card-timeline">
               <div class="highlights-card-content-hiw">
                 <h3 class="card-heading text-color-white">Step 3</h3>
-                <div class="text-block-5">Search, Tag, Edit and More....<br></div>
+                <div class="text-block-5">Offline Companion App &amp; Auto-Sorting<br></div>
               </div>
-              <div class="text-block-4">No more digging through folders. Every photo is intelligently indexed, securely stored, and instantly searchable by patient, date, or treatment. Review progress over time, compare sessions side by side, and never lose track of a patient image again.</div>
+              <div class="text-block-4">The SmileShot Offline Desktop App runs locally on your surgery PC with zero internet requirement. When an SD card is inserted or watch folder updated, it instantly matches photo timestamps to your appointment schedule and structures raw photos into clean <code>Patient Name / Date / Procedure</code> directories with zero lag and zero cloud dependency.</div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-block">
+            <div class="highlights-card-timeline">
+              <div class="highlights-card-content-hiw">
+                <h3 class="card-heading text-color-white">Step 4</h3>
+                <div class="text-block-3">Frontend Web Dashboard &amp; Gallery<br></div>
+              </div>
+              <div class="text-block-4">Access your organized records anytime via the SmileShot Web Platform. Search patients in seconds, browse chronological case timelines, and review high-resolution photo galleries from any surgery workstation or tablet—while original raw files remain safely secured in your own local or cloud storage.</div>
+            </div>
+            <div class="scoll-wrap">
+              <div class="scroll-animate"></div>
+              <div class="scroll-base"></div>
+            </div>
+            <div class="dot"></div>
+            <div class="img-block extra"><img sizes="(max-width: 480px) 100vw, 480px" alt="Step 4: Frontend Web Dashboard &amp; Patient Gallery" src="images/step4-frontend-gallery.svg" loading="lazy" style="max-width: 100%; height: auto; border-radius: 16px;"></div>
+          </div>
+
+          <!-- Future Roadmap: AI Clinical Tagging -->
+          <div class="roadmap-card">
+            <div class="roadmap-content">
+              <div class="roadmap-badge">
+                <span class="roadmap-badge-text">Coming Next • On Our Roadmap</span>
+              </div>
+              <h3 class="roadmap-title">AI Clinical Tagging &amp; View Classification</h3>
+              <p class="roadmap-description">
+                We are actively training machine-vision models to automatically classify dental views (upper/lower occlusal, buccal views, retracted frontal, and shade guides) and provide side-by-side pre-op vs. post-op case comparisons.
+              </p>
+            </div>
+            <div class="roadmap-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8C88FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
             </div>
           </div>
         </div>
       </div>
-      <div class="stars-curve stars-curve--rotated">
-        <div class="stars-curve-glow stars-curve-glow--blue"></div><img src="images/stars-bg.svg" loading="lazy" alt="" class="stars-curve-bg">
-        <div class="stars-curve-bottom stars-curve-bottom--blue"></div>
-      </div>
-      <section id="section-register" class="section-cta">
-        <div class="container page-padding">
-          <div class="section-header">
-            <h2 class="cta-heading">Built for the future.<br>Coming soon.</h2>
-            <div class="cta-wrap">
-              <a href="#" class="cta-button w-inline-block">
-                <div>Register your interest</div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
-  </div>
-  <div class="page-wrapper-2">
-    <div class="section-hero">
-      <div class="container-3">
-        <div class="padding-vertical-xxlarge">
-          <div class="timeline-hero_heading-wrapper">
-            <h1>Animated <span class="text-underline">Timeline</span></h1>
-            <div class="margin-bottom-medium">
-              <h4>Made for the Webflow community</h4>
-            </div>
-            <p class="paragraph-large">We use this timeline component to tell the Relume story, but we think it can be used to communicate a process, a product roadmap, a company’s history or a story.</p>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div style="margin-bottom: 16px;">
+            <img src="images/smieshot2.png" alt="SmileShot Logo" width="110">
           </div>
+          <p style="color: #9da3af; font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
+            Designed by dentists, for dentists. Structure, index, and retrieve clinical dental photography with machine-level precision and zero image exposure.
+          </p>
+          <p style="font-size: 0.8rem; color: #6b7280;">
+            Solid Solutions Ltd (trading as SmileShot)<br>
+            Company Registration: 6425612 (England & Wales)<br>
+            19 Linfields, Little Chalfont, Amersham, Buckinghamshire, HP7 9QH
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#section-features">Features</a></li>
+            <li><a href="#section-how-it-works">How It Works</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot">Register Interest</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal & Compliance</h4>
+          <ul>
+            <li><a href="dpa.html">Data Processing Agreement (DPA)</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="agreements.html">Legal & Compliance Hub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact & Security</h4>
+          <ul>
+            <li><a href="mailto:info@smileshot.ai">info@smileshot.ai</a></li>
+            <li style="margin-top: 12px; font-size: 0.82rem; color: #9da3af;">
+              UK GDPR Compliant<br>
+              TLS 1.3 & AES-256 Encrypted<br>
+              Zero Image Hosting Architecture
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-    <div class="section-timeline-heading">
-      <div class="container-3">
-        <div class="padding-vertical-xlarge">
-          <div class="timeline-main_heading-wrapper">
-            <div class="margin-bottom-medium">
-              <h2>The story of how we got started on Webflow</h2>
-            </div>
-            <p class="paragraph-large">Relume was started by two guys with the same mission. <br>Our story starts 8 years ago... Strap in.</p>
-          </div>
-        </div>
+      <div class="footer-bottom">
+        <div>© 2026 Solid Solutions Ltd (trading as SmileShot). All rights reserved.</div>
+        <div>Dental Photography Management Platform</div>
       </div>
-    </div>
-    <div class="section-timeline">
-      <div class="container-3">
-        <div class="timeline_component">
-          <div class="timeline_progress">
-            <div class="timeline_progress-bar"></div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe04f66" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04f67-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">January 2012</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04f6a-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04f6c-2e7d93b4" class="timeline_right">
-              <div class="margin-bottom-xlarge">
-                <div class="timeline_text">Co-founder Dan finishes the economics degree he promised his mum he’d complete, only to never use it and start his own clothing business (love you mum).</div>
-              </div>
-              <div class="timeline_image-wrapper"><img width="480" sizes="(max-width: 479px) 100vw, 480px" alt="" src="images/Image-1---Transparent.png" loading="lazy" srcset="images/Image-1---Transparent-p-500.png 500w, images/Image-1---Transparent-p-800.png 800w, images/Image-1---Transparent.png 960w"></div>
-            </div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe04f72" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04f73-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">June 2016</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04f76-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div class="timeline_right">
-              <div class="margin-bottom-medium">
-                <div class="timeline_text">Adam catches wind of Dan’s early success and slides into his DM offering help. Dan politely accepts.<br></div>
-              </div>
-              <div class="margin-bottom-xlarge">
-                <div class="inline-block">
-                  <a href="https://www.smartcompany.com.au/startupsmart/profiles/sydney-startup-with-500000-in-funding-wants-to-monetise-your-social-media-following/" target="_blank" class="timeline_link w-inline-block">
-                    <div>See the article that got Adam’s attention</div><img loading="lazy" src="images/open_in_new.svg" alt="" class="link-icon">
-                  </a>
-                </div>
-              </div>
-              <div class="timeline_image-wrapper"><img width="480" sizes="(max-width: 479px) 100vw, 480px" alt="" src="images/Image-2.png" loading="lazy" srcset="images/Image-2-p-500.png 500w, images/Image-2.png 960w"></div>
-            </div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe04f85" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04f86-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">August 2017</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04f89-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div class="timeline_right">
-              <div class="margin-bottom-medium">
-                <div class="timeline_text">After collectively failing a number of business ventures, Dan and Adam finally have their first break. Together they build Lumio with a team of 7 other legends.<br></div>
-              </div>
-              <div class="margin-bottom-xlarge">
-                <p class="text-colour-lightgrey">Lumio, previously called Foenix, was a social media analytics company that helped brands like Audi, David Jones and Red Balloon source legitimate influencers for social media campaigns.<br></p>
-              </div>
-              <div class="timeline_image-wrapper margin-bottom-medium"><img width="480" loading="lazy" alt="" src="images/Image-3.png"></div>
-              <div class="timeline_quote-wrapper"><img loading="lazy" src="images/Dan.jpg" alt="" class="timeline_quote-image">
-                <div class="timeline_quote-text-wrapper">
-                  <p class="timeline_quote">“We were essentially the Instagram police and called out fake influencers left, right and centre. It was fun and all, but there is only so many bikini chicks you can look at on Instagram before you start losing your mind.”<br></p>
-                  <p class="timeline_quote-title">Dan, Co-founder and CEO of Lumio<br></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe04f9f" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04fa0-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">April 2018</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04fa3-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div class="timeline_right">
-              <div class="margin-bottom-medium">
-                <div class="timeline_text">Lumio gets acquired by German company, Influencer DB. Yeww! 🎉<br></div>
-              </div>
-              <div class="margin-bottom-xlarge">
-                <div class="inline-block">
-                  <a href="https://www.bandt.com.au/influencerdb-acquires-australian-based-lumio-analytics/" target="_blank" class="timeline_link w-inline-block">
-                    <div>Read about the acquisition</div><img loading="lazy" src="images/open_in_new.svg" alt="" class="link-icon">
-                  </a>
-                </div>
-              </div>
-              <div class="timeline_image-wrapper margin-bottom-medium"><img width="480" sizes="(max-width: 479px) 100vw, 480px" alt="" src="images/Image-4.png" loading="lazy" srcset="images/Image-4-p-500.png 500w, images/Image-4.png 960w"></div>
-              <div class="timeline_quote-wrapper"><img loading="lazy" src="images/Adam.jpg" alt="" class="timeline_quote-image">
-                <div class="timeline_quote-text-wrapper">
-                  <p class="timeline_quote">“After this, we both took up golf during the week and started eating fancy dinners at the local Country Club... Ha. This is not what happened at all. We suck at golf and love eating Guzman Y Gomez.”<br></p>
-                  <p class="timeline_quote-title">Adam, Co-founder of Lumio<br></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe04fbb" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04fbc-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">June 2018</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04fbf-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div class="timeline_right">
-              <div class="margin-bottom-medium">
-                <div class="timeline_text">Dan is shipped off to work with ze Germans as Head of Product at Influencer DB.<br><br>Adam decides to stay in Sydney and cut his teeth as a Product Designer with one of Sydney&#x27;s leading design studios.<br></div>
-              </div>
-              <div class="margin-bottom-medium">
-                <p class="text-colour-lightgrey">Whilst in Germany, Dan worked with with brands such as Daniel Wellington and BMW - Ja!<br><br>Adam worked with clients like Vodafone, TAFE NSW, Adobe and also won the &#x27;Good Design Australia&#x27; award for his work on the Seatfrog website.<br></p>
-              </div>
-              <div class="margin-bottom-xlarge">
-                <div class="inline-block">
-                  <a href="https://good-design.org/projects/seatfrog-com-responsive-website-redesign/" target="_blank" class="timeline_link w-inline-block">
-                    <div>Read about the Good Design Award</div><img loading="lazy" src="images/open_in_new.svg" alt="" class="link-icon">
-                  </a>
-                </div>
-              </div>
-              <div class="timeline_image-wrapper"><img width="480" sizes="(max-width: 479px) 100vw, 480px" alt="" src="images/Image-5.png" loading="lazy" srcset="images/Image-5-p-500.png 500w, images/Image-5.png 960w"></div>
-            </div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe04fd8" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04fd9-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">November 2019</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04fdc-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div class="timeline_right">
-              <div class="margin-bottom-medium">
-                <div class="timeline_text">After spending time apart, Dan and Adam begin to plan their next moves and rekindle their business partnership.<br></div>
-              </div>
-              <div class="margin-bottom-medium">
-                <p class="text-colour-lightgrey">The name &quot;Relume&quot; is born.<br></p>
-              </div>
-              <div class="margin-bottom-xlarge">
-                <div class="timeline_definition-wrapper">
-                  <p class="text-colour-white">relume<br></p>
-                  <div class="timeline_badge">
-                    <div>verb</div>
-                  </div>
-                  <p class="text-colour-lightgrey">[ri-loom]<br><span class="text-colour-white">To relight or rekindle (a light, flame, etc.)</span></p>
-                </div>
-              </div>
-              <div class="timeline_image-wrapper"><img width="480" sizes="(max-width: 479px) 100vw, 480px" alt="" src="images/Image-6.png" loading="lazy" srcset="images/Image-6-p-500.png 500w, images/Image-6.png 960w"></div>
-            </div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe04ff6" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04ff7-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">January 2020</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe04ffa-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div class="timeline_right">
-              <div class="margin-bottom-medium">
-                <div class="timeline_text">Dan moves back to Sydney to join a Global startup incubator called Antler. He convinces Adam to join him.<br></div>
-              </div>
-              <div class="margin-bottom-xlarge">
-                <div class="inline-block">
-                  <a href="https://www.antler.co/" target="_blank" class="timeline_link w-inline-block">
-                    <div>learn more about antler here</div><img loading="lazy" src="images/open_in_new.svg" alt="" class="link-icon">
-                  </a>
-                </div>
-              </div>
-              <div class="timeline_image-wrapper"><img width="480" loading="lazy" alt="" src="images/Image-7.png"></div>
-            </div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe05009" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe0500a-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">April 2020</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe0500d-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div class="timeline_right">
-              <div class="timeline_milestone-badge">
-                <div>🚀 relume launches </div>
-              </div>
-              <div class="margin-bottom-medium">
-                <div class="timeline_text">For various reasons, Dan and Adam decide to turn down a $100,000 investment from Antler and start their own business venture, without taking outside investment.<br></div>
-              </div>
-              <div class="margin-bottom-xlarge">
-                <p class="text-colour-lightgrey">To do this they would have to build a company that would be profitable in its first year. Not the next Uber of *insert clever idea*.<br></p>
-              </div>
-              <div class="timeline_image-wrapper"><img width="480" loading="lazy" alt="" src="images/Image-8.png"></div>
-            </div>
-          </div>
-          <div data-w-id="a42178d7-519e-66e7-6923-cffb5fe0501d" class="timeline_item">
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe0501e-2e7d93b4" class="timeline_left">
-              <div class="timeline_date-text">June 2020</div>
-            </div>
-            <div id="w-node-a42178d7-519e-66e7-6923-cffb5fe05021-2e7d93b4" class="timeline_centre">
-              <div class="timeline_circle"></div>
-            </div>
-            <div class="timeline_right">
-              <div class="margin-bottom-xlarge">
-                <div class="timeline_text">After building 11 websites on Webflow in under 6 weeks as a way to test a number of business ideas, Dan and Adam decide to stick to what they know best and launch Relume - a company that designs and builds beautiful Webflow websites.<br></div>
-              </div>
-              <div class="timeline_image-wrapper margin-bottom-medium"><img width="480" loading="lazy" alt="" src="images/Image-9.png"></div>
-              <div class="timeline_quote-wrapper"><img loading="lazy" src="images/Dan.jpg" alt="" class="timeline_quote-image">
-                <div class="timeline_quote-text-wrapper">
-                  <p class="timeline_quote">“Relume was an opportunity for us to build a profitable business, not a startup that bleeds cash, whilst doing what we love to do. It also allows us to learn about all types of businesses and the problems they deal with. These are all opportunities that we could potentially solve for in the future. For now, our goal is simple, we want to build a kickass business which means we really want our customers and the Webflow community to succeed too.”<br></p>
-                  <p class="timeline_quote-title">Dan, Co-founder of Relume<br></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="overlay-fade-bottom"></div>
-          <div class="overlay-fade-top"></div>
-        </div>
-      </div>
-    </div>
+    </footer>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67f84d7ebe40f86df7a7aa45" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>

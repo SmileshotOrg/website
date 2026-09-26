@@ -1,0 +1,103 @@
+<svg width="480" height="340" viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardBg3Off" x1="0" y1="0" x2="480" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#151828" stop-opacity="0.9"/>
+      <stop stop-color="#0b0e1b" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="accentGlow3Off" x1="40" y1="40" x2="440" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10B981" stop-opacity="0.2"/>
+      <stop stop-color="#6663F6" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Panel -->
+  <rect x="20" y="20" width="440" height="300" rx="20" fill="url(#cardBg3Off)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
+  <rect x="20" y="20" width="440" height="300" rx="20" fill="url(#accentGlow3Off)"/>
+
+  <!-- Top Header Bar (Desktop App Window) -->
+  <rect x="40" y="44" width="14" height="14" rx="7" fill="#6663F6" fill-opacity="0.4"/>
+  <rect x="62" y="44" width="14" height="14" rx="7" fill="#3B82F6" fill-opacity="0.4"/>
+  <rect x="84" y="44" width="14" height="14" rx="7" fill="#10B981" fill-opacity="0.4"/>
+  
+  <text x="240" y="56" fill="#8A8F98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle" letter-spacing="0.5">SMILESHOT OFFLINE COMPANION APP</text>
+
+  <!-- Offline Status Bar -->
+  <g transform="translate(40, 74)">
+    <rect width="400" height="36" rx="8" fill="#0A0D18" stroke="#10B981" stroke-opacity="0.3"/>
+    <circle cx="18" cy="18" r="5" fill="#10B981"/>
+    <text x="32" y="22" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">Offline Engine Active</text>
+    
+    <rect x="180" y="9" width="105" height="18" rx="4" fill="#10B981" fill-opacity="0.15"/>
+    <text x="232" y="21" fill="#34D399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" text-anchor="middle">⚡ Zero Internet Needed</text>
+
+    <text x="388" y="22" fill="#8A8F98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="end">Local Surgery PC</text>
+  </g>
+
+  <!-- Left: Watch Folder & Detection Pipeline -->
+  <g transform="translate(40, 120)">
+    <rect width="195" height="180" rx="12" fill="#0A0D18" stroke="#ffffff" stroke-opacity="0.08"/>
+    
+    <text x="14" y="24" fill="#8A8F98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600">LOCAL WATCH FOLDERS</text>
+
+    <!-- Watch folder entry 1 -->
+    <g transform="translate(12, 34)">
+      <rect width="171" height="36" rx="6" fill="#141828" stroke="#6663F6" stroke-opacity="0.25"/>
+      <path d="M10 12h4l2 3h8a1.5 1.5 0 011.5 1.5v8A1.5 1.5 0 0124 26H10a1.5 1.5 0 01-1.5-1.5v-11A1.5 1.5 0 0110 12z" fill="#60A5FA" fill-opacity="0.4" stroke="#60A5FA" stroke-width="1"/>
+      <text x="32" y="18" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600">D:\Surgery1\WatchFolder</text>
+      <text x="32" y="29" fill="#10B981" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8">● Auto-Scan Running</text>
+    </g>
+
+    <!-- SD Card Detection -->
+    <g transform="translate(12, 78)">
+      <rect width="171" height="42" rx="6" fill="#181F34" stroke="#10B981" stroke-opacity="0.35"/>
+      <text x="10" y="18" fill="#34D399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700">💾 SD Card Inserted (E:\)</text>
+      <text x="10" y="32" fill="#9CA3AF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5">6 new RAW photos detected</text>
+    </g>
+
+    <!-- Match Status -->
+    <g transform="translate(12, 128)">
+      <rect width="171" height="40" rx="6" fill="#131625" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="10" y="17" fill="#8C88FF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600">Timestamp: 09:14:18</text>
+      <text x="10" y="30" fill="#D1D5DB" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5">➔ Mapped to Sarah Jenkins</text>
+    </g>
+  </g>
+
+  <!-- Right: Auto Structured Output Directory -->
+  <g transform="translate(245, 120)">
+    <rect width="195" height="180" rx="12" fill="#0A0D18" stroke="#ffffff" stroke-opacity="0.08"/>
+    
+    <text x="14" y="24" fill="#8A8F98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600">STRUCTURED LOCAL DISK</text>
+
+    <!-- Patient Folder -->
+    <g transform="translate(12, 34)">
+      <rect width="171" height="32" rx="6" fill="#1A2138" stroke="#6663F6" stroke-opacity="0.4"/>
+      <path d="M10 10h3l2 2h8a1 1 0 011 1v6a1 1 0 01-1 1H10a1 1 0 01-1-1v-8a1 1 0 011-1z" fill="#8C88FF" fill-opacity="0.4" stroke="#8C88FF" stroke-width="1"/>
+      <text x="28" y="20" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">Sarah Jenkins</text>
+    </g>
+
+    <!-- Subfolder -->
+    <g transform="translate(24, 72)">
+      <rect width="159" height="26" rx="5" fill="#151A2C" stroke="#ffffff" stroke-opacity="0.08"/>
+      <path d="M8 8h3l1.5 1.5h6a1 1 0 011 1v5a1 1 0 01-1 1H8a1 1 0 01-1-1v-6.5A1 1 0 018 8z" fill="#60A5FA" fill-opacity="0.3" stroke="#60A5FA" stroke-width="0.8"/>
+      <text x="24" y="17" fill="#D1D5DB" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5">2026-09-21_Veneers</text>
+    </g>
+
+    <!-- File list -->
+    <g transform="translate(36, 106)">
+      <circle cx="5" cy="6" r="2" fill="#10B981"/>
+      <text x="12" y="9" fill="#9CA3AF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8">IMG_001.raw (09:12)</text>
+
+      <circle cx="5" cy="19" r="2" fill="#10B981"/>
+      <text x="12" y="22" fill="#9CA3AF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8">IMG_002.raw (09:14)</text>
+
+      <circle cx="5" cy="32" r="2" fill="#10B981"/>
+      <text x="12" y="35" fill="#9CA3AF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8">IMG_003.raw (09:17)</text>
+    </g>
+
+    <!-- Local Sync Completed -->
+    <g transform="translate(12, 148)">
+      <rect width="171" height="24" rx="5" fill="#10B981" fill-opacity="0.12"/>
+      <text x="85" y="16" fill="#10B981" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">✓ Instant Local Sorting Done</text>
+    </g>
+  </g>
+</svg>
