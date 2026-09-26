@@ -1,0 +1,75 @@
+<svg width="480" height="340" viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardBg4Gal" x1="0" y1="0" x2="480" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#151828" stop-opacity="0.9"/>
+      <stop stop-color="#0b0e1b" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="accentGlow4Gal" x1="40" y1="40" x2="440" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6663F6" stop-opacity="0.25"/>
+      <stop stop-color="#3B82F6" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Panel -->
+  <rect x="20" y="20" width="440" height="300" rx="20" fill="url(#cardBg4Gal)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
+  <rect x="20" y="20" width="440" height="300" rx="20" fill="url(#accentGlow4Gal)"/>
+
+  <!-- Top Window Header Bar -->
+  <rect x="40" y="44" width="14" height="14" rx="7" fill="#6663F6" fill-opacity="0.4"/>
+  <rect x="62" y="44" width="14" height="14" rx="7" fill="#3B82F6" fill-opacity="0.4"/>
+  <rect x="84" y="44" width="14" height="14" rx="7" fill="#10B981" fill-opacity="0.4"/>
+  
+  <text x="240" y="56" fill="#8A8F98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.5">SMILESHOT WEB PLATFORM • PATIENT GALLERY</text>
+
+  <!-- Patient Search & Filter Bar -->
+  <g transform="translate(40, 76)">
+    <rect width="400" height="36" rx="8" fill="#0A0D18" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="20" cy="18" r="5.5" stroke="#8C88FF" stroke-width="1.5"/>
+    <line x1="24" y1="22" x2="28" y2="26" stroke="#8C88FF" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="38" y="22" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500">Sarah Jenkins</text>
+    <rect x="130" y="9" width="60" height="18" rx="4" fill="#1E243A"/>
+    <text x="160" y="21" fill="#9CA3AF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" text-anchor="middle">21 Sep 2026</text>
+    <rect x="196" y="9" width="70" height="18" rx="4" fill="#6663F6" fill-opacity="0.2"/>
+    <text x="231" y="21" fill="#8C88FF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Veneers Prep</text>
+    <text x="360" y="22" fill="#10B981" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">● 6 Photos</text>
+  </g>
+
+  <!-- Web Gallery Grid of Photos -->
+  <g transform="translate(40, 124)">
+    <!-- Photo 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="124" height="168" rx="8" fill="#0A0D18" stroke="#ffffff" stroke-opacity="0.08"/>
+      <rect x="8" y="8" width="108" height="110" rx="6" fill="#181D30"/>
+      <!-- Tooth Silhouette -->
+      <path d="M48 45c-5 0-10 4-10 10 0 9 7 20 24 27 17-7 24-18 24-27 0-6-5-10-10-10-6 0-10 5-14 5s-8-5-14-5z" fill="#6663F6" fill-opacity="0.2" stroke="#8C88FF" stroke-width="1.2"/>
+      <rect x="14" y="14" width="34" height="16" rx="3" fill="#000000" fill-opacity="0.5"/>
+      <text x="31" y="25" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="600" text-anchor="middle">09:12</text>
+      <text x="12" y="136" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">Upper Arch</text>
+      <text x="12" y="150" fill="#8A8F98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8">IMG_4821.jpg</text>
+    </g>
+
+    <!-- Photo 2 (Featured / Selected) -->
+    <g transform="translate(138, 0)">
+      <rect width="124" height="168" rx="8" fill="#0A0D18" stroke="#6663F6" stroke-opacity="0.6"/>
+      <rect x="8" y="8" width="108" height="110" rx="6" fill="#1B2238" stroke="#6663F6" stroke-opacity="0.3"/>
+      <!-- Frontal Retracted Tooth -->
+      <path d="M44 42c-6 0-12 5-12 12 0 11 8 24 30 32 22-8 30-21 30-32 0-7-6-12-12-12-7 0-12 6-18 6s-11-6-18-6z" fill="#3B82F6" fill-opacity="0.25" stroke="#60A5FA" stroke-width="1.5"/>
+      <rect x="14" y="14" width="34" height="16" rx="3" fill="#6663F6" fill-opacity="0.5"/>
+      <text x="31" y="25" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="600" text-anchor="middle">09:14</text>
+      <text x="12" y="136" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">Frontal Retracted</text>
+      <text x="12" y="150" fill="#8C88FF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8">IMG_4822.jpg</text>
+    </g>
+
+    <!-- Photo 3 -->
+    <g transform="translate(276, 0)">
+      <rect width="124" height="168" rx="8" fill="#0A0D18" stroke="#ffffff" stroke-opacity="0.08"/>
+      <rect x="8" y="8" width="108" height="110" rx="6" fill="#181D30"/>
+      <!-- Buccal Tooth -->
+      <path d="M50 45c-5 0-10 4-10 10 0 9 7 20 22 27 15-7 22-18 22-27 0-6-5-10-10-10-5 0-9 5-12 5s-7-5-12-5z" fill="#10B981" fill-opacity="0.2" stroke="#34D399" stroke-width="1.2"/>
+      <rect x="14" y="14" width="34" height="16" rx="3" fill="#000000" fill-opacity="0.5"/>
+      <text x="31" y="25" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="600" text-anchor="middle">09:17</text>
+      <text x="12" y="136" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">Buccal Right</text>
+      <text x="12" y="150" fill="#8A8F98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8">IMG_4823.jpg</text>
+    </g>
+  </g>
+</svg>

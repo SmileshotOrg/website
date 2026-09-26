@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Data Processing Agreement (DPA) | SmileShot</title>
+  <meta content="SmileShot Data Processing Agreement (DPA) in accordance with Article 28 of the UK GDPR." name="description">
+  <meta content="Data Processing Agreement (DPA) | SmileShot" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/smileshot-ai.webflow.css" rel="stylesheet" type="text/css">
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000212;
+      color: #9da3af;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:visited {
+      color: inherit;
+    }
+    .nav-link {
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .nav-link:visited {
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: #8a8f98 !important;
+    }
+    .nav-bg {
+      mask-image: linear-gradient(to bottom, black 48px, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, black 48px, transparent);
+    }
+    .doc-hero {
+      padding: 130px 24px 40px;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.25), transparent);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .doc-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .doc-meta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #8c88ff;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .doc-container {
+      max-width: 1040px;
+      margin: 40px auto 100px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+    }
+    @media (max-width: 860px) {
+      .doc-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .doc-toc {
+        display: none;
+      }
+    }
+    .doc-toc {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 0.85rem;
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+    }
+    .doc-toc h4 {
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .doc-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .doc-toc li {
+      margin-bottom: 8px;
+    }
+    .doc-toc a {
+      color: #8a8f98;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+    }
+    .doc-toc a:hover {
+      color: #ffffff;
+    }
+    .doc-content {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    @media (max-width: 600px) {
+      .doc-content {
+        padding: 24px;
+      }
+    }
+    .doc-content h2 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin: 40px 0 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-weight: 600;
+    }
+    .doc-content h2:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    .doc-content h3 {
+      color: #e5e7eb;
+      font-size: 1.15rem;
+      margin: 24px 0 12px;
+      font-weight: 600;
+    }
+    .doc-content p, .doc-content li {
+      color: #adb3bf;
+      font-size: 0.98rem;
+    }
+    .doc-content strong {
+      color: #ffffff;
+    }
+    .doc-content ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .doc-content li {
+      margin-bottom: 8px;
+    }
+    .alert-box {
+      background: rgba(102, 99, 246, 0.08);
+      border: 1px solid rgba(102, 99, 246, 0.25);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 0.95rem;
+      color: #d1d5ff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      font-weight: 600;
+    }
+    td {
+      background: rgba(255, 255, 255, 0.01);
+      color: #cbd5e1;
+    }
+    .doc-actions-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .raw-badge {
+      color: #8c88ff;
+      background: rgba(102, 99, 246, 0.15);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+    .raw-badge:hover {
+      background: rgba(102, 99, 246, 0.3);
+    }
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #020412;
+      padding: 60px 24px 40px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    .footer-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 800px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      color: #8a8f98;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+    .footer-bottom {
+      max-width: 1120px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Nav -->
+    <nav class="nav">
+      <div class="nav-bg"></div>
+      <div class="container page-padding">
+        <div class="nav-inner">
+          <div class="nav-menu-wrap">
+            <div class="nav-menu">
+              <a href="index.html" class="nav-logo w-inline-block">
+                <div class="div-block"><img src="images/smieshot2.png" loading="lazy" width="125" alt="SmileShot Logo" style="display: block; max-width: 125px; height: auto;"></div>
+              </a>
+              <a href="index.html#section-features" class="nav-link w-inline-block">
+                <div>Features</div>
+              </a>
+              <a href="index.html#section-how-it-works" class="nav-link w-inline-block">
+                <div>How It Works</div>
+              </a>
+              <a href="about.html" class="nav-link w-inline-block">
+                <div>About</div>
+              </a>
+              <a href="agreements.html" class="nav-link w-inline-block">
+                <div>Legal & Compliance</div>
+              </a>
+            </div>
+            <div class="nav-btns">
+              <a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot" class="cta-button cta-button--nav w-inline-block">
+                <div>Register Interest</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="doc-hero">
+      <div class="container">
+        <h1>Data Processing Agreement (DPA)</h1>
+        <div class="doc-meta">
+          <span>Solid Solutions Ltd (trading as SmileShot)</span>
+          <span>•</span>
+          <span>UK GDPR Article 28</span>
+          <span>•</span>
+          <span>Version 1.0 (21/9/26)</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="doc-container">
+      <!-- Table of Contents -->
+      <aside class="doc-toc">
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="#sec-1">1. Statutory Status & Scope</a></li>
+          <li><a href="#sec-2">2. Documented Instructions & Sandboxed Access</a></li>
+          <li><a href="#sec-3">3. Storage & Zero-Image Visibility</a></li>
+          <li><a href="#sec-4">4. Daylist Capture & AI RAM Processing</a></li>
+          <li><a href="#sec-5">5. Sub-processors & Transfers</a></li>
+          <li><a href="#sec-6">6. Technical & Security Measures</a></li>
+          <li><a href="#sec-7">7. Breaches & Incidents</a></li>
+          <li><a href="#sec-8">8. Data Subject Rights & DPIAs</a></li>
+          <li><a href="#sec-9">9. Termination & Data Purge</a></li>
+          <li><a href="#sec-10">10. Audit Rights</a></li>
+          <li><a href="#schedule-1">Schedule 1: Processing Details</a></li>
+        </ul>
+      </aside>
+
+      <!-- Document Content -->
+      <main class="doc-content">
+        <div class="doc-actions-top">
+          <span style="font-size: 0.85rem; color: #8a8f98;">Effective Date: 21 September 2026</span>
+        </div>
+
+        <p><strong>Solid Solutions Ltd (trading as SmileShot)</strong></p>
+        <p><em>In accordance with Article 28 of the UK General Data Protection Regulation (UK GDPR)</em></p>
+
+        <p>This Data Processing Agreement ("<strong>DPA</strong>") governs the processing of personal data in connection with the SmileShot software-as-a-service platform. This DPA supplements and forms an integral part of the B2B Terms of Service between:</p>
+
+        <ul>
+          <li><strong>The Subscriber</strong> (the dental practice, clinic, or registered dental healthcare professional acting in an independent or associate capacity) ("<strong>Data Controller</strong>" or "<strong>Controller</strong>"); and</li>
+          <li><strong>Solid Solutions Ltd (trading as SmileShot)</strong>, a company incorporated in England and Wales under Company Registration Number 6425612, having its registered office at 19 Linfields, Little Chalfont, Amersham, Buckinghamshire, HP7 9QH ("<strong>Data Processor</strong>", "<strong>SmileShot</strong>", "<strong>we</strong>", or "<strong>us</strong>").</li>
+        </ul>
+
+        <p>The Controller and the Processor are collectively referred to as the "<strong>Parties</strong>" and each individually as a "<strong>Party</strong>".</p>
+
+        <h2 id="sec-1">1. Statutory Status & Scope of Agreement</h2>
+        <ul>
+          <li><strong>Role Classifications:</strong> For the purposes of Data Protection Legislation (defined as the UK GDPR and the Data Protection Act 2018), the Subscriber acts as the <strong>Data Controller</strong> in respect of all patient records, patient identifiers, and clinical documentation managed through the platform. Solid Solutions Ltd acts strictly as a <strong>Data Processor</strong> processing personal data exclusively on the documented instructions of the Controller.</li>
+          <li><strong>Associate Clinicians:</strong> Where the Controller is a self-employed or associate dental practitioner operating independently within a practice, the practitioner warrants that they hold independent Controller status for the clinical records and patient datasets they choose to catalogue, structure, and index through their individual SmileShot account.</li>
+          <li><strong>Subject Matter & Purpose:</strong> The subject matter, duration, nature, and purpose of the processing, as well as the types of personal data and categories of data subjects, are specified in <strong>Schedule 1</strong> of this DPA.</li>
+        </ul>
+
+        <h2 id="sec-2">2. Documented Instructions & Sandboxed Access Perimeter</h2>
+        <ul>
+          <li><strong>Strict Adherence to Instructions:</strong> The Processor shall process personal data solely on behalf of, and in accordance with, the documented instructions of the Controller, including with respect to transfers of personal data outside the United Kingdom, unless required to do so by applicable United Kingdom law.</li>
+          <li><strong>Sandboxed Access Boundary ("SmileShot" Folder Only):</strong> The Controller explicitly authorises and instructs the Processor to interface with the Controller’s third-party cloud storage repository (e.g., Google Drive, Microsoft OneDrive, Dropbox) via authenticated API credentials. <strong>The technical scope of this authorisation is strictly confined and sandboxed to a single, designated root directory labelled "SmileShot".</strong></li>
+          <li><strong>Out-of-Scope Data:</strong> The Processor does not request, hold, or execute technical access to view, catalogue, alter, or interact with any other files, patient records, administrative folders, or practice databases located outside the designated "SmileShot" root folder.</li>
+          <li><strong>Notification of Infringing Instructions:</strong> The Processor shall immediately notify the Controller if, in its reasonable opinion, any instruction given by the Controller infringes the UK GDPR, the Data Protection Act 2018, or other applicable data protection legislation.</li>
+        </ul>
+
+        <h2 id="sec-3">3. Storage Architecture, Metadata Processing & Zero-Image Visibility</h2>
+        <ul>
+          <li><strong>Bring Your Own Storage (BYOS) Architecture:</strong> The Parties acknowledge that SmileShot does not provide primary hosting, data warehousing, or backup repository services for raw clinical photography. All original photographic files remain stored continuously and exclusively within the Controller’s independent cloud storage provider.</li>
+          <li><strong>Metadata-Only Processing:</strong> Processing by the Processor within the sandboxed directory is limited strictly to structural metadata:
+            <ul>
+              <li>Directory pathways and sub-folder hierarchies;</li>
+              <li>Folder naming structures and patient reference tags;</li>
+              <li>System timestamps and file creation/modification dates; and</li>
+              <li>Authentication and synchronisation tokens.</li>
+            </ul>
+          </li>
+          <li><strong>Technical Inability to View Imagery:</strong> The Processor’s platform architecture <strong>lacks the technical capability, access permissions, and software functionality to open, inspect, render, or visually process</strong> the underlying visual image payloads or pixel data stored within the Controller’s cloud repository. The Processor does not process the visual content of clinical photographs as Special Category Data.</li>
+        </ul>
+
+        <div class="alert-box">
+          <strong>Privacy Guardrail:</strong> Zero raw clinical patient photographs are stored, analyzed, or hosted on SmileShot infrastructure. Your imagery remains encrypted within your independent cloud storage provider.
+        </div>
+
+        <h2 id="sec-4">4. Daylist Capture & Ephemeral AI Processing</h2>
+        <ul>
+          <li><strong>Operational Purpose:</strong> Where the Controller elects to utilise the automated Daylist Capture workflow, the Processor is instructed to process photographic images of daily appointment schedules ("<strong>Daylist Imagery</strong>") solely to extract three administrative data fields: <strong>Patient Name, Date of Birth, and Appointment Time</strong>.</li>
+          <li><strong>Ephemeral Processing (RAM Only):</strong> The Daylist Imagery is processed transiently in temporary computer memory (RAM). The source image and any incidental clinical or practice notations visible on the schedule are irretrievably and permanently purged from server memory immediately upon completion of text extraction. No Daylist Imagery is written to non-volatile disk storage.</li>
+          <li><strong>AI Model Training Ban:</strong> The Processor warrants that neither the Daylist Imagery, nor the extracted patient fields, nor any operational metadata shall be used, retained, shared, or ingested to train, fine-tune, or develop any artificial intelligence or machine learning models (including foundation models operated by third-party infrastructure providers).</li>
+        </ul>
+
+        <h2 id="sec-5">5. Sub-processors & International Transfers</h2>
+        <p>The Controller grants general written authorisation to the Processor to engage the sub-processors set out below to deliver core cloud infrastructure:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Sub-processor</th>
+              <th>Entity & Jurisdiction</th>
+              <th>Processing Activity</th>
+              <th>Location of Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Microsoft Azure</strong></td>
+              <td>Microsoft Ireland Operations Limited (Ireland / UK)</td>
+              <td>Database hosting, account telemetry, and encrypted metadata storage (Azure Cosmos DB).</td>
+              <td>United Kingdom (UK South / UK West)</td>
+            </tr>
+            <tr>
+              <td><strong>Microsoft Azure OpenAI & Document Intelligence</strong></td>
+              <td>Microsoft Ireland Operations Limited (Ireland / EU)</td>
+              <td>Transient optical character recognition (OCR) and ephemeral parsing of Daylist Imagery.</td>
+              <td>European Economic Area (Sweden Central)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ul>
+          <li><strong>International Transfers & UK Adequacy:</strong> All persistent metadata is retained within data centres in the United Kingdom. Processing of Daylist Imagery within Sweden Central (EEA) is executed pursuant to the UK Government's statutory Adequacy Regulations recognising the European Economic Area as ensuring an equivalent level of data protection.</li>
+          <li><strong>Sub-processor Obligations:</strong> The Processor shall impose data protection terms on any appointed sub-processor that offer at least the same level of protection for Controller data as those set out in this DPA. The Processor remains fully liable to the Controller for the performance of each sub-processor’s obligations.</li>
+          <li><strong>Notification of Changes:</strong> The Processor shall provide the Controller with at least 30 days’ prior written notice of any intended appointment of a new sub-processor, giving the Controller the opportunity to object on reasonable data protection grounds prior to implementation.</li>
+        </ul>
+
+        <h2 id="sec-6">6. Technical and Organisational Security Measures</h2>
+        <p>The Processor shall implement and maintain appropriate technical and organisational measures to ensure a level of security appropriate to operational risk, including:</p>
+        <ul>
+          <li><strong>Cryptographic Standards:</strong> All account data, access tokens, and indexed metadata are encrypted in transit using <strong>TLS 1.3</strong> and at rest using <strong>AES-256</strong> encryption within enterprise-grade infrastructure certified to ISO/IEC 27001 and SOC 2 Type II standards.</li>
+          <li><strong>Zero Visual Access:</strong> Technical permissions within the codebase prevent backend engineers, administrators, or software routines from viewing or reconstructing raw patient imagery stored within the Controller's cloud repository.</li>
+          <li><strong>Access Control & Least Privilege:</strong> Role-based access control (RBAC) and strict least-privilege principles govern internal administrative access to platform configuration environments.</li>
+          <li><strong>Confidentiality:</strong> All personnel, contractors, and software engineers authorised to access or handle Controller metadata have committed themselves to binding contractual confidentiality obligations.</li>
+        </ul>
+
+        <h2 id="sec-7">7. Security Incidents & Personal Data Breaches</h2>
+        <ul>
+          <li><strong>Notification Window:</strong> The Processor shall notify the Controller without undue delay, and in any event <strong>within 48 hours</strong>, upon confirming a Personal Data Breach affecting personal data or metadata processed by SmileShot.</li>
+          <li><strong>Breach Details:</strong> The notification shall include, at a minimum: the nature of the breach, affected records, contact point details, likely consequences, and remediation measures taken.</li>
+          <li><strong>Remedial Assistance:</strong> The Processor shall provide reasonable cooperation and assistance to enable the Controller to meet reporting obligations to the Information Commissioner's Office (ICO) and affected data subjects under Articles 33 and 34 of the UK GDPR.</li>
+        </ul>
+
+        <h2 id="sec-8">8. Data Subject Rights & Regulatory Assistance</h2>
+        <ul>
+          <li><strong>Data Subject Requests (DSARs):</strong> Taking into account the nature of the processing, the Processor shall implement appropriate technical and organisational measures to assist the Controller in fulfilling statutory obligations under Chapter III of the UK GDPR.</li>
+          <li><strong>Direct Requests:</strong> If the Processor receives a direct request from a data subject regarding Controller data, the Processor shall not respond directly (save to acknowledge receipt) and shall immediately redirect the data subject to the Controller.</li>
+          <li><strong>Compliance Assessments (DPIAs):</strong> The Processor shall provide reasonable assistance with Data Protection Impact Assessments and ICO prior consultations under Articles 35 and 36 of the UK GDPR.</li>
+        </ul>
+
+        <h2 id="sec-9">9. Termination, Deletion & Offboarding</h2>
+        <ul>
+          <li><strong>Continuous Controller Ownership:</strong> Because raw clinical photography remains stored exclusively within the Controller’s third-party cloud storage account, the Controller retains uninterrupted physical and legal possession of all clinical images throughout and following the termination of service.</li>
+          <li><strong>Scope of Return & Deletion:</strong> Upon termination of the underlying Terms of Service, the Processor’s post-termination obligations are strictly limited to revoking third-party cloud OAuth tokens and securely purging/deleting all database records, customer metadata, indexing logs, and cached authorisation identifiers within <strong>30 days of termination</strong>.</li>
+        </ul>
+
+        <h2 id="sec-10">10. Audit Rights & Demonstrable Compliance</h2>
+        <ul>
+          <li><strong>Information Provision:</strong> The Processor shall make available to the Controller, upon reasonable written request, all information necessary to demonstrate compliance with Article 28 of the UK GDPR.</li>
+          <li><strong>Audits & Inspections:</strong> The Processor shall permit audits conducted by the Controller or an independent professional auditor with at least 14 business days’ advance written notice, during standard hours, subject to strict confidentiality undertakings.</li>
+        </ul>
+
+        <h2 id="schedule-1">Schedule 1: Processing Details & Data Specification</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Processing Dimension</th>
+              <th>Technical & Legal Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Subject Matter</strong></td>
+              <td>Provision of administrative software for organising, naming, indexing, and categorising clinical dental photography directories via a Bring Your Own Storage (BYOS) framework.</td>
+            </tr>
+            <tr>
+              <td><strong>Duration</strong></td>
+              <td>The term of active platform registration plus a 30-day offboarding data purge period following contract termination.</td>
+            </tr>
+            <tr>
+              <td><strong>Nature & Operations</strong></td>
+              <td>Automated folder creation, indexing, timestamp verification, pathway taxonomy organisation, and transient optical character recognition (OCR) of appointment schedules.</td>
+            </tr>
+            <tr>
+              <td><strong>Data Subjects</strong></td>
+              <td>Patients of the subscribing dental practice or associate practitioner; authorised practice staff and registered clinicians.</td>
+            </tr>
+            <tr>
+              <td><strong>Types of Personal Data</strong></td>
+              <td>
+                • <strong>Administrative Metadata:</strong> Patient reference IDs, directory paths, folder names, timestamps, file attributes.<br>
+                • <strong>Scheduling Data:</strong> Patient Name, Date of Birth, Appointment Time.<br>
+                • <strong>Account Data:</strong> Practitioner name, professional email address, practice physical address, subscription identifiers.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Special Category Data</strong></td>
+              <td>
+                • <strong>Daylist Imagery (Transient Only):</strong> Processed ephemerally in RAM solely to parse Name, Date of Birth, and Appointment Time, then instantly discarded.<br>
+                • <strong>Raw Clinical Imagery:</strong> None. SmileShot does not ingest, view, host, or process the visual pixel data of clinical intraoral/extraoral photographs.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Data Storage Locations</strong></td>
+              <td>
+                • <strong>Metadata & Account Data:</strong> United Kingdom (Microsoft Azure UK data centres).<br>
+                • <strong>Daylist OCR Processing:</strong> Sweden Central (Microsoft Azure OpenAI).<br>
+                • <strong>Clinical Photographs:</strong> Exclusively inside the Controller’s independently managed cloud storage.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div style="margin-bottom: 16px;">
+            <img src="images/smieshot2.png" alt="SmileShot Logo" width="110">
+          </div>
+          <p style="color: #9da3af; font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
+            Designed by dentists, for dentists. Structure, index, and retrieve clinical dental photography with machine-level precision and zero image exposure.
+          </p>
+          <p style="font-size: 0.8rem; color: #6b7280;">
+            Solid Solutions Ltd (trading as SmileShot)<br>
+            Company Registration: 6425612 (England & Wales)<br>
+            19 Linfields, Little Chalfont, Amersham, Buckinghamshire, HP7 9QH
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#section-features">Features</a></li>
+            <li><a href="index.html#section-how-it-works">How It Works</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot">Register Interest</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal & Compliance</h4>
+          <ul>
+            <li><a href="dpa.html">Data Processing Agreement (DPA)</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="agreements.html">Legal & Compliance Hub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact & Security</h4>
+          <ul>
+            <li><a href="mailto:info@smileshot.ai">info@smileshot.ai</a></li>
+            <li style="margin-top: 12px; font-size: 0.82rem; color: #9da3af;">
+              UK GDPR Compliant<br>
+              TLS 1.3 & AES-256 Encrypted<br>
+              Zero Image Hosting Architecture
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Solid Solutions Ltd (trading as SmileShot). All rights reserved.</div>
+        <div>Dental Photography Management Platform</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

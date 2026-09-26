@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Privacy Policy | SmileShot</title>
+  <meta content="SmileShot Privacy Policy – How we handle and safeguard practitioner and clinical metadata." name="description">
+  <meta content="Privacy Policy | SmileShot" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/smileshot-ai.webflow.css" rel="stylesheet" type="text/css">
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000212;
+      color: #9da3af;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:visited {
+      color: inherit;
+    }
+    .nav-link {
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .nav-link:visited {
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: #8a8f98 !important;
+    }
+    .nav-bg {
+      mask-image: linear-gradient(to bottom, black 48px, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, black 48px, transparent);
+    }
+    .doc-hero {
+      padding: 130px 24px 40px;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.25), transparent);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .doc-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .doc-meta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #8c88ff;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .doc-container {
+      max-width: 1040px;
+      margin: 40px auto 100px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+    }
+    @media (max-width: 860px) {
+      .doc-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .doc-toc {
+        display: none;
+      }
+    }
+    .doc-toc {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 0.85rem;
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+    }
+    .doc-toc h4 {
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .doc-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .doc-toc li {
+      margin-bottom: 8px;
+    }
+    .doc-toc a {
+      color: #8a8f98;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+    }
+    .doc-toc a:hover {
+      color: #ffffff;
+    }
+    .doc-content {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    @media (max-width: 600px) {
+      .doc-content {
+        padding: 24px;
+      }
+    }
+    .doc-content h2 {
+      color: #ffffff;
+      font-size: 1.45rem;
+      margin: 36px 0 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-weight: 600;
+    }
+    .doc-content h2:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    .doc-content h3 {
+      color: #e5e7eb;
+      font-size: 1.15rem;
+      margin: 24px 0 12px;
+      font-weight: 600;
+    }
+    .doc-content h4 {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin: 18px 0 8px;
+      font-weight: 600;
+    }
+    .doc-content p, .doc-content li {
+      color: #adb3bf;
+      font-size: 0.98rem;
+    }
+    .doc-content strong {
+      color: #ffffff;
+    }
+    .doc-content ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .doc-content li {
+      margin-bottom: 8px;
+    }
+    .alert-box {
+      background: rgba(102, 99, 246, 0.08);
+      border: 1px solid rgba(102, 99, 246, 0.25);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 0.95rem;
+      color: #d1d5ff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      font-weight: 600;
+    }
+    td {
+      background: rgba(255, 255, 255, 0.01);
+      color: #cbd5e1;
+    }
+    .doc-actions-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .raw-badge {
+      color: #8c88ff;
+      background: rgba(102, 99, 246, 0.15);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+    .raw-badge:hover {
+      background: rgba(102, 99, 246, 0.3);
+    }
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #020412;
+      padding: 60px 24px 40px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    .footer-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 800px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      color: #8a8f98;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+    .footer-bottom {
+      max-width: 1120px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Nav -->
+    <nav class="nav">
+      <div class="nav-bg"></div>
+      <div class="container page-padding">
+        <div class="nav-inner">
+          <div class="nav-menu-wrap">
+            <div class="nav-menu">
+              <a href="index.html" class="nav-logo w-inline-block">
+                <div class="div-block"><img src="images/smieshot2.png" loading="lazy" width="125" alt="SmileShot Logo" style="display: block; max-width: 125px; height: auto;"></div>
+              </a>
+              <a href="index.html#section-features" class="nav-link w-inline-block">
+                <div>Features</div>
+              </a>
+              <a href="index.html#section-how-it-works" class="nav-link w-inline-block">
+                <div>How It Works</div>
+              </a>
+              <a href="about.html" class="nav-link w-inline-block">
+                <div>About</div>
+              </a>
+              <a href="agreements.html" class="nav-link w-inline-block">
+                <div>Legal & Compliance</div>
+              </a>
+            </div>
+            <div class="nav-btns">
+              <a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot" class="cta-button cta-button--nav w-inline-block">
+                <div>Register Interest</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="doc-hero">
+      <div class="container">
+        <h1>Privacy Policy</h1>
+        <div class="doc-meta">
+          <span>Solid Solutions Ltd (trading as SmileShot)</span>
+          <span>•</span>
+          <span>Version 1.0</span>
+          <span>•</span>
+          <span>Contact: info@smileshot.ai</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="doc-container">
+      <!-- Table of Contents -->
+      <aside class="doc-toc">
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="#sec-1">1. Contact Us</a></li>
+          <li><a href="#sec-2">2. About Us & BYOS Model</a></li>
+          <li><a href="#sec-3">3. What We Collect</a></li>
+          <li><a href="#sec-3-1">3.1 BYOS Cloud Boundaries</a></li>
+          <li><a href="#sec-4">4. How We Collect</a></li>
+          <li><a href="#sec-5">5. How We Use Data</a></li>
+          <li><a href="#sec-6">6. Marketing & Opt-Out</a></li>
+          <li><a href="#sec-7">7. Storage & Daylist AI</a></li>
+          <li><a href="#sec-8">8. Information Sharing</a></li>
+          <li><a href="#sec-9">9. Cookies & Web Tracking</a></li>
+          <li><a href="#sec-10">10. Data Protection & Security</a></li>
+          <li><a href="#sec-11">11. Your Statutory Rights</a></li>
+          <li><a href="#sec-12">12. Changes to this Policy</a></li>
+          <li><a href="#sec-13">13. Company Registration</a></li>
+        </ul>
+      </aside>
+
+      <!-- Content -->
+      <main class="doc-content">
+        <div class="doc-actions-top">
+          <span style="font-size: 0.85rem; color: #8a8f98;">Last Updated: 21 September 2026</span>
+        </div>
+
+        <h2 id="sec-1">1. We're here to help</h2>
+        <p>You can get in touch with us at any time about the way we handle and safeguard your information. If you want to ask questions, update your information, manage your account, change preferences, or register a concern, contact us at <strong><a href="mailto:info@smileshot.ai" style="color: #8c88ff;">info@smileshot.ai</a></strong>.</p>
+
+        <h2 id="sec-2">2. About Us & Architecture</h2>
+        <p>As part of our service, we provide the SmileShot Platform to qualified dental professionals (including practice owners, self-employed associates, and clinical team members acting in a professional capacity) (<strong>Practitioners</strong>). The Platform facilitates the secure administration and file-management of clinical dental photographs using a <strong>"Bring Your Own Storage" (BYOS)</strong> architecture.</p>
+        <p>To maintain strict compliance, SmileShot adheres to rigid operational boundaries: it is not a clinical diagnostic tool, it is not a primary clinical record system, and it is not an image hosting platform or a backup drive. We act purely as a <strong>Data Processor</strong>, while you act as the <strong>Data Controller</strong>.</p>
+
+        <div class="alert-box">
+          <strong>Key Architectural Rule:</strong> SmileShot operates strictly at the directory metadata level. The Platform infrastructure lacks the technical capability, access permissions, and functionality to view, open, inspect, render, or visually process the underlying clinical photographs stored in your cloud environment.
+        </div>
+
+        <h2 id="sec-3">3. What information do we collect?</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Data Category</th>
+              <th>Details & Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Practitioner Information</strong></td>
+              <td>Your name, email address, contact number and the physical address of the dental practice where you work. <em>Purpose:</em> To create your account, administer your subscription, confirm professional B2B standing, and provide secure access.</td>
+            </tr>
+            <tr>
+              <td><strong>Patient Scheduling Data (Special Category)</strong></td>
+              <td>Patient Name, Date of Birth, Appointment Time. <em>Purpose:</em> Extracted transiently to automate patient profile creation. Our AI strictly extracts only these three data points. The source image is irretrievably discarded from temporary memory immediately after extraction. No patient data is used to train AI models.</td>
+            </tr>
+            <tr>
+              <td><strong>Clinical Photo Metadata</strong></td>
+              <td>Metadata from your clinical photos (folder pathways, file directory names, patient reference identifiers, timestamps within the designated "SmileShot" folder). <em>Purpose:</em> To organise directory pathways and map folder hierarchies to patient profiles. We do not host or view raw photos.</td>
+            </tr>
+            <tr>
+              <td><strong>Verification & Audit Data</strong></td>
+              <td>IP addresses, timestamps, browser/device types, electronic acceptance logs. <em>Purpose:</em> To maintain verifiable audit trails of contract execution (Terms, DPA) and security monitoring.</td>
+            </tr>
+            <tr>
+              <td><strong>Support & Feedback Data</strong></td>
+              <td>Information voluntarily provided via customer support requests, emails, or surveys. <em>Purpose:</em> Technical resolution and platform enhancements.</td>
+            </tr>
+            <tr>
+              <td><strong>Aggregated Analytics</strong></td>
+              <td>De-identified, aggregated usage metrics (page views, feature usage, indexing velocity). <em>Purpose:</em> Internal analytics and service optimization.</td>
+            </tr>
+            <tr>
+              <td><strong>Cookies & Web Logs</strong></td>
+              <td>Standard web log information and session data collected via cookies for authentication and preference management.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 id="sec-3-1">3.1 Cloud Storage Boundaries & Sandboxed Architecture (BYOS)</h3>
+        <ul>
+          <li><strong>Sandboxed Access to One Folder Only:</strong> Technical access is restricted strictly and exclusively to a single root directory labelled <strong>"SmileShot"</strong>. SmileShot does not request, hold, or execute permissions to access any folders or files outside this directory.</li>
+          <li><strong>Technical Inability to View Images:</strong> Infrastructure lacks technical capability, permissions, and functionality to open or inspect image pixel data.</li>
+          <li><strong>No Central Image Hosting:</strong> All raw clinical imagery remains permanently stored in your third-party cloud repository (Google Drive, OneDrive, Dropbox).</li>
+        </ul>
+
+        <h2 id="sec-4">4. How do we collect your information?</h2>
+        <p>We collect personal information directly from you during registration, correspondence, support requests, and when linking your designated cloud storage repository via OAuth authorization tokens.</p>
+
+        <h2 id="sec-5">5. How do we use your information?</h2>
+        <ul>
+          <li><strong>Access & Authentication:</strong> To verify professional B2B standing and secure platform logins.</li>
+          <li><strong>Healthcare Administration:</strong> To automate folder structures, patient profiles, and metadata indexing within your sandboxed directory.</li>
+          <li><strong>De-identified Telemetry:</strong> To improve software speed and reliability. Never includes sensitive patient data or daylists.</li>
+          <li><strong>Security & Support:</strong> To deliver system notifications, security updates, and resolve support requests.</li>
+        </ul>
+
+        <h2 id="sec-6">6. Marketing & Opt-Out</h2>
+        <p>You can opt out of direct marketing at any time using the unsubscribe link in communications or by emailing info@smileshot.ai. We never use health information for marketing or disclose practitioner data to third parties for marketing purposes.</p>
+
+        <h2 id="sec-7">7. Storage & Ephemeral AI Infrastructure</h2>
+        <p>Personal account information and metadata are stored exclusively within certified enterprise cloud infrastructure in the <strong>United Kingdom</strong>.</p>
+        <h4>Daylist Processing Technical Guardrails:</h4>
+        <ul>
+          <li><strong>Ephemeral Processing (RAM Only):</strong> Appointment sheets processed via Microsoft Azure OpenAI (Sweden Central / EEA) operate strictly in temporary memory. The image is permanently purged immediately after extracting patient name, DOB, and appointment time.</li>
+          <li><strong>No AI Model Training:</strong> Zero data retention or AI foundation model training.</li>
+          <li><strong>In-Transit Encryption:</strong> TLS 1.3 encryption across all communication endpoints.</li>
+        </ul>
+
+        <h2 id="sec-8">8. Who do we share information with?</h2>
+        <p>We engage trusted infrastructure partners (Microsoft Azure UK/EEA) strictly for database hosting, telemetry, and encrypted metadata storage. <strong>We do not sell, rent, or trade practice metadata or patient records.</strong></p>
+
+        <h2 id="sec-9">9. Cookies & Web Tracking</h2>
+        <p>We use essential cookies to maintain secure sessions and remember interface settings. You can manage or disable cookies via your browser settings.</p>
+
+        <h2 id="sec-10">10. How do we protect your information?</h2>
+        <ul>
+          <li><strong>Bank-Grade Encryption:</strong> TLS 1.3 in transit and AES-256 at rest.</li>
+          <li><strong>Transient Processing:</strong> Immediate memory purge after schedule data extraction.</li>
+          <li><strong>Zero Image Exposure:</strong> Complete architectural separation between folder indexing and raw photo storage.</li>
+          <li><strong>Data Minimisation:</strong> Automatic token revocation and metadata purge within 30 days of account termination.</li>
+        </ul>
+
+        <h2 id="sec-11">11. What are your statutory rights?</h2>
+        <p>Under UK GDPR, you have the right to access, correct, delete, or export your personal data, and to lodge complaints with the <strong>Information Commissioner's Office (ICO)</strong>. To submit a request, contact <strong><a href="mailto:info@smileshot.ai" style="color: #8c88ff;">info@smileshot.ai</a></strong>. We formally respond within 30 days.</p>
+
+        <h2 id="sec-12">12. Changes to this Policy</h2>
+        <p>Updates will be posted directly to our website with appropriate in-app notifications for registered practitioners.</p>
+
+        <h2 id="sec-13">13. Company Registration</h2>
+        <p>Solid Solutions Limited (trading as SmileShot) is incorporated in England and Wales (Registration No. 6425612), with registered office at 19 Linfields, Little Chalfont, Amersham, Buckinghamshire, HP7 9QH. Email: <strong>info@smileshot.ai</strong>.</p>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div style="margin-bottom: 16px;">
+            <img src="images/smieshot2.png" alt="SmileShot Logo" width="110">
+          </div>
+          <p style="color: #9da3af; font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
+            Designed by dentists, for dentists. Structure, index, and retrieve clinical dental photography with machine-level precision and zero image exposure.
+          </p>
+          <p style="font-size: 0.8rem; color: #6b7280;">
+            Solid Solutions Ltd (trading as SmileShot)<br>
+            Company Registration: 6425612 (England & Wales)<br>
+            19 Linfields, Little Chalfont, Amersham, Buckinghamshire, HP7 9QH
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#section-features">Features</a></li>
+            <li><a href="index.html#section-how-it-works">How It Works</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot">Register Interest</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal & Compliance</h4>
+          <ul>
+            <li><a href="dpa.html">Data Processing Agreement (DPA)</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="agreements.html">Legal & Compliance Hub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact & Security</h4>
+          <ul>
+            <li><a href="mailto:info@smileshot.ai">info@smileshot.ai</a></li>
+            <li style="margin-top: 12px; font-size: 0.82rem; color: #9da3af;">
+              UK GDPR Compliant<br>
+              TLS 1.3 & AES-256 Encrypted<br>
+              Zero Image Hosting Architecture
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Solid Solutions Ltd (trading as SmileShot). All rights reserved.</div>
+        <div>Dental Photography Management Platform</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
