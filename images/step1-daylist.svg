@@ -28,7 +28,7 @@
   <rect x="62" y="44" width="14" height="14" rx="7" fill="#3B82F6" fill-opacity="0.4"/>
   <rect x="84" y="44" width="14" height="14" rx="7" fill="#10B981" fill-opacity="0.4"/>
   
-  <text x="240" y="56" fill="#8A8F98" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.5">CLINIC DAYLIST INGESTION • EPHEMERAL RAM</text>
+  <text x="240" y="56" fill="#8A8F98" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.5">PRACTICE CLOUD STORAGE • BYOS ARCHITECTURE</text>
   
   <!-- Daylist Schedule Container -->
   <rect x="40" y="78" width="250" height="220" rx="14" fill="#0A0D18" stroke="#ffffff" stroke-opacity="0.08"/>
@@ -66,7 +66,7 @@
 
   <g transform="translate(54, 244)">
     <rect width="222" height="40" rx="8" fill="#0E111D" stroke="#ffffff" stroke-opacity="0.03"/>
-    <text x="111" y="24" fill="#6B7280" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" text-anchor="middle">+ 5 Upcoming Patients (Daylist)</text>
+    <text x="111" y="24" fill="#6B7280" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" text-anchor="middle">+ 5 Upcoming Patient Sessions</text>
   </g>
 
   <!-- Right Side: Storage & Security Badge -->
