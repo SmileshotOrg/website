@@ -422,6 +422,206 @@
     gap: 16px;
     font-size: 0.82rem;
   }
+
+  /* Cinematic About Page Fade-In Sequence (matches landing page) */
+  .about-badge {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(2px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body.is-loaded .about-badge {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    transition-delay: 0.02s;
+  }
+
+  .hero-heading {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    will-change: opacity, transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: opacity 1.3s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  body.is-loaded .hero-heading {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0.04s;
+  }
+
+  .subheading.subheading--hero {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(3px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body.is-loaded .subheading.subheading--hero {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    transition-delay: 0.28s;
+  }
+
+  /* Founders & Leadership Styles */
+  .team-section {
+    padding: 0 0 100px;
+    position: relative;
+    z-index: 2;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 36px;
+  }
+  @media (max-width: 991px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .team-card {
+    background: rgba(13, 17, 30, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(3px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+  }
+  body.is-loaded .team-card {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  /* Subtle, natural stagger across the 3 co-founder boxes */
+  body.is-loaded .team-card:nth-child(1) {
+    transition-delay: 0.44s;
+  }
+  body.is-loaded .team-card:nth-child(2) {
+    transition-delay: 0.50s;
+  }
+  body.is-loaded .team-card:nth-child(3) {
+    transition-delay: 0.56s;
+  }
+  .team-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(124, 58, 237, 0.12);
+  }
+  .team-photo-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1.08;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #090c17;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    opacity: 0;
+    transform: scale(0.97);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  body.is-loaded .team-card:nth-child(1) .team-photo-wrap {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.50s;
+  }
+  body.is-loaded .team-card:nth-child(2) .team-photo-wrap {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.56s;
+  }
+  body.is-loaded .team-card:nth-child(3) .team-photo-wrap {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.62s;
+  }
+  .team-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+  .team-card:hover .team-card-img {
+    transform: scale(1.03);
+  }
+  .team-tech-avatar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 40%, rgba(124, 58, 237, 0.22), rgba(15, 23, 42, 0.95));
+    border: 1px dashed rgba(167, 139, 250, 0.3);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+  }
+  .team-role-pill {
+    align-self: flex-start;
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #c084fc;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+  .team-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+  }
+  .team-subtitle {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .team-bio {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #9da3af;
+    margin: 0;
+  }
+  .team-bio p {
+    margin-bottom: 12px;
+  }
+  .team-bio p:last-child {
+    margin-bottom: 0;
+  }
 </style>
     </div>
     <nav class="nav">
@@ -442,8 +642,8 @@
               <a href="about.html" aria-current="page" class="nav-link w-inline-block w--current">
                 <div>About</div>
               </a>
-              <a href="agreements.html" class="nav-link w-inline-block">
-                <div>Legal & Compliance</div>
+              <a href="privacy.html" class="nav-link w-inline-block">
+                <div>Privacy</div>
               </a>
             </div>
             <div class="nav-btns">
@@ -455,55 +655,74 @@
         </div>
       </div>
     </nav>
-    <header class="hero">
+    <header class="hero" style="padding-bottom: 90px;">
       <div class="page-padding">
         <div class="container">
-          <div class="hero-header">
-            <h1 class="hero-heading">About Us</h1>
-            <h2 class="subheading subheading--hero new">SmileShot is the future of dental photography workflow—meticulously crafted to bridge the gap between clinical precision and effortless organisation. <br>‍<br>Designed for modern dental practices, it empowers clinicians to capture, sort, and retrieve patient images with AI-enhanced intelligence. Say goodbye to cluttered folders and lost photos. <br>‍<br>With SmileShot, every photo finds its place—securely stored, beautifully indexed, and instantly accessible. Built for speed, clarity, and confidence in every patient interaction.</h2>
+          <div class="hero-header" style="max-width: 860px; margin: 0 auto; text-align: center;">
+            <div class="about-badge" style="display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #a855f7; margin-bottom: 12px;">ABOUT US</div>
+            <h1 class="hero-heading">The Minds Behind SmileShot</h1>
+            <h2 class="subheading subheading--hero" style="margin-top: 18px; margin-bottom: 0; font-size: 1.25rem; font-weight: 400; color: #cbd5e1; line-height: 1.5;">Our team is the perfect blend of clinical and technical excellence.</h2>
+          </div>
+
+          <!-- Team Grid Section placed directly underneath subtitle -->
+          <div class="team-grid">
+            <!-- 1. Ben Divsalar -->
+            <div class="team-card">
+              <div class="team-photo-wrap">
+                <img src="images/photo-3.jpg" alt="Ben Divsalar" class="team-card-img" loading="lazy">
+              </div>
+              <div class="team-role-pill">Systems Architecture &amp; Security</div>
+              <h3 class="team-name">Ben Divsalar</h3>
+              <div class="team-subtitle">Senior Software Engineer • Ex-Tier 1 Banking Infrastructure</div>
+              <div class="team-bio">
+                <p>
+                  Ben is a Senior Software Engineer and Systems Architect recognised for engineering at the highest levels of resilience, scale and data integrity. With an extensive background designing high-level infrastructure across Tier-1 banking, fintech, and heavily regulated financial institutions, he brings an exceptional standard of technical excellence to clinical software.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2. Dr Milad Divsalar -->
+            <div class="team-card">
+              <div class="team-photo-wrap">
+                <img src="images/photo-1.jpg" alt="Dr Milad Divsalar" class="team-card-img" loading="lazy">
+              </div>
+              <div class="team-role-pill">Clinical Lead</div>
+              <h3 class="team-name">Dr Milad Divsalar</h3>
+              <div class="team-subtitle">Practising Dentist • Accelerate Cambridge Alumnus</div>
+              <div class="team-bio">
+                <p>
+                  Milad is a practising dentist who created SmileShot after seeing first-hand how inefficient photography workflows impact dental practices. After completing the Accelerate Cambridge programme at Cambridge Judge Business School, he turned these challenges into a commercial solution built around one core principle: putting customers at the centre of everything we do. By listening to dental teams and continuously acting on their feedback, SmileShot evolves to meet their needs, streamline workflows, save valuable chair time, and deliver measurable ROI.
+                </p>
+              </div>
+            </div>
+
+            <!-- 3. Dr Rooz Divsalar -->
+            <div class="team-card">
+              <div class="team-photo-wrap">
+                <img src="images/photo-2.jpg" alt="Dr Rooz Divsalar" class="team-card-img" loading="lazy">
+              </div>
+              <div class="team-role-pill">Clinical Design</div>
+              <h3 class="team-name">Dr Rooz Divsalar</h3>
+              <div class="team-subtitle">Practising Dentist • BACD Committee • Early Monzo Alumnus</div>
+              <div class="team-bio">
+                <p>
+                  Rooz is a practising dentist and respected voice in modern dentistry, known for his clinical precision and artistry, with a following of over 16,000 and more than 1 million views across TikTok and Instagram.
+                </p>
+                <p>
+                  He sits on the British Academy of Cosmetic Dentistry (BACD) committee and is an early Monzo alumnus, and he brings that tech background to SmileShot by shaping its interface, design and overall look and feel.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </header>
+
     <main class="main">
       <div class="stars-curve">
         <div class="stars-curve-glow"></div><img src="images/stars-bg.svg" loading="lazy" alt="" class="stars-curve-bg">
         <div class="stars-curve-bottom"></div>
       </div>
-      <section class="section-highlights" style="padding-bottom: 80px;">
-        <div class="container page-padding">
-          <div class="section-header">
-            <h2 class="heading-medium">Engineered for Clinical Excellence</h2>
-            <h2 class="subheading">Built with privacy-by-design, non-diagnostic indexing, and practitioner data ownership.<br></h2>
-          </div>
-          <div class="w-layout-grid feature-grid-copy" style="max-width: 1000px; margin: 48px auto 0;">
-            <div class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="15" height="14" viewbox="0 0 15 14" fill="currentColor">
-                  <path d="M11.0002 6C13.2094 6 15.0002 7.79086 15.0002 10C15.0002 12.2091 13.2094 14 11.0002 14C8.79111 14 7.00024 12.2091 7.00024 10C7.00024 7.79086 8.79111 6 11.0002 6ZM10.7461 0C12.8172 0 14.4961 1.67893 14.4961 3.75V4.24561C14.4961 4.65982 14.1603 4.99561 13.7461 4.99561C13.3319 4.99561 12.9961 4.65982 12.9961 4.24561V3.75C12.9961 2.50736 11.9887 1.5 10.7461 1.5H4.74609C3.50345 1.5 2.49609 2.50736 2.49609 3.75V9.97046C2.49609 11.2131 3.50345 12.2205 4.74609 12.2205H6.05259C6.46681 12.2205 6.80259 12.5562 6.80259 12.9705C6.80259 13.3847 6.46681 13.7205 6.05259 13.7205H4.74609C2.67503 13.7205 0.996094 12.0415 0.996094 9.97046V3.75C0.996094 1.67893 2.67503 0 4.74609 0H10.7461ZM11.0002 7.25488L10.8985 7.26173C10.5657 7.30688 10.3022 7.57032 10.2571 7.90311L10.2502 8.00488V9.25088L9.00104 9.25L8.89926 9.25674C8.56642 9.30153 8.3027 9.56469 8.2572 9.89744L8.25024 9.9992L8.25698 10.101C8.30178 10.4338 8.56494 10.6975 8.89769 10.743L8.99945 10.75L10.2502 10.7509V12.0036L10.2571 12.1054C10.3022 12.4382 10.5657 12.7016 10.8985 12.7468L11.0002 12.7536L11.102 12.7468C11.4348 12.7016 11.6982 12.4382 11.7434 12.1054L11.7502 12.0036V10.7529L12.9994 10.7542L13.1012 10.7475C13.4341 10.7027 13.6978 10.4395 13.7433 10.1068L13.7502 10.005L13.7435 9.90326C13.6987 9.57042 13.4355 9.3067 13.1028 9.2612L13.001 9.25424L11.7502 9.25288V8.00488L11.7434 7.90311C11.6982 7.57032 11.4348 7.30688 11.102 7.26173L11.0002 7.25488Z"></path>
-                </svg></div>
-              <div class="display-inline"><span class="text-color-white">Built by Dental Professionals.</span> Created to solve the real-world friction of clinical photography in modern practices.</div>
-            </div>
-            <div class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14.9408 8.91426L12.9576 8.65557C12.9855 8.4419 13 8.22314 13 8C13 7.77686 12.9855 7.5581 12.9576 7.34443L14.9408 7.08573C14.9799 7.38496 15 7.69013 15 8C15 8.30987 14.9799 8.61504 14.9408 8.91426ZM14.4688 5.32049C14.2328 4.7514 13.9239 4.22019 13.5538 3.73851L11.968 4.95716C12.2328 5.30185 12.4533 5.68119 12.6214 6.08659L14.4688 5.32049ZM12.2615 2.4462L11.0428 4.03204C10.6981 3.76716 10.3188 3.54673 9.91341 3.37862L10.6795 1.53116C11.2486 1.76715 11.7798 2.07605 12.2615 2.4462ZM8.91426 1.05917L8.65557 3.04237C8.4419 3.01449 8.22314 3 8 3C7.77686 3 7.5581 3.01449 7.34443 3.04237L7.08574 1.05917C7.38496 1.02013 7.69013 1 8 1C8.30987 1 8.61504 1.02013 8.91426 1.05917ZM5.32049 1.53116L6.08659 3.37862C5.68119 3.54673 5.30185 3.76716 4.95716 4.03204L3.73851 2.4462C4.22019 2.07605 4.7514 1.76715 5.32049 1.53116ZM2.4462 3.73851L4.03204 4.95716C3.76716 5.30185 3.54673 5.68119 3.37862 6.08659L1.53116 5.32049C1.76715 4.7514 2.07605 4.22019 2.4462 3.73851ZM1.05917 7.08574C1.02013 7.38496 1 7.69013 1 8C1 8.30987 1.02013 8.61504 1.05917 8.91426L3.04237 8.65557C3.01449 8.4419 3 8.22314 3 8C3 7.77686 3.01449 7.5581 3.04237 7.34443L1.05917 7.08574ZM1.53116 10.6795L3.37862 9.91341C3.54673 10.3188 3.76716 10.6981 4.03204 11.0428L2.4462 12.2615C2.07605 11.7798 1.76748 11.2486 1.53116 10.6795ZM3.73851 13.5538L4.95716 11.968C5.30185 12.2328 5.68119 12.4533 6.08659 12.6214L5.32049 14.4688C4.7514 14.2328 4.22019 13.9239 3.73851 13.5538ZM7.08574 14.9408L7.34443 12.9576C7.5581 12.9855 7.77686 13 8 13C8.22314 13 8.4419 12.9855 8.65557 12.9576L8.91427 14.9408C8.61504 14.9799 8.30987 15 8 15C7.69013 15 7.38496 14.9799 7.08574 14.9408ZM10.6795 14.4688L9.91341 12.6214C10.3188 12.4533 10.6981 12.2328 11.0428 11.968L12.2615 13.5538C11.7798 13.9239 11.2486 14.2328 10.6795 14.4688ZM13.5538 12.2615L11.968 11.0428C12.2328 10.6981 12.4533 10.3188 12.6214 9.91341L14.4688 10.6795C14.2328 11.2486 13.924 11.7798 13.5538 12.2615Z"></path>
-                </svg></div>
-              <div class="display-inline"><span class="text-color-white">Zero Raw Image Hosting.</span> Your clinical images stay entirely in your own cloud storage (BYOS).</div>
-            </div>
-            <div class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                </svg></div>
-              <div class="display-inline"><span class="text-color-white">Automated Photo Organisation.</span> Never worry about SD cards or sorting files again—save 3+ hours every month automatically.</div>
-            </div>
-            <div class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="14" height="14" viewbox="0 0 14 14" fill="currentColor">
-                  <path d="M10.25 0C12.3211 0 14 1.67893 14 3.75V8.60502C14 9.07085 13.8143 9.51745 13.484 9.84591L9.81859 13.4909C9.49069 13.817 9.04705 14 8.58461 14H3.75C1.67893 14 0 12.3211 0 10.25V3.75C0 1.67893 1.67893 0 3.75 0H10.25ZM10.25 1.5H3.75C2.50736 1.5 1.5 2.50736 1.5 3.75V10.25C1.5 11.4926 2.50736 12.5 3.75 12.5H6.999L7 9.75C7 8.28747 8.1417 7.0916 9.58248 7.00502L9.75 7H12.5V3.75C12.5 2.50736 11.4926 1.5 10.25 1.5ZM12.5 8.5H9.75C9.05964 8.5 8.5 9.05964 8.5 9.75L8.499 12.5H8.58461C8.65068 12.5 8.71405 12.4739 8.7609 12.4273L12.4263 8.78229C12.4735 8.73537 12.5 8.67157 12.5 8.60502V8.5Z"></path>
-                </svg></div>
-              <div class="display-inline"><span class="text-color-white">UK GDPR &amp; DPA Ready.</span> Bank-grade TLS 1.3 &amp; AES-256 encryption engineered strictly for dental teams.<br></div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <!-- Site Footer -->
@@ -611,6 +830,19 @@ document.addEventListener("keyup", function (e) {
     keyEl.removeAttribute("data-pressed");
   }
 });
+
+// About Page Fade-In Controller (matches landing page)
+(function() {
+  function activateAboutSequence() {
+    document.body.classList.add("is-loaded");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", activateAboutSequence);
+  } else {
+    activateAboutSequence();
+  }
+})();
 </script>
 </body>
 </html>
