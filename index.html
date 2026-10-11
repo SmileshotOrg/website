@@ -447,41 +447,736 @@
           gap: 16px;
           font-size: 0.82rem;
         }
+
+        /* Landing Page Sequential Fade-In Sequence
+           Order:
+           1 - Your dental photography reimagined (.hero-heading) - Cinematic, slower fade
+           2 - Designed by dentists, for dentists. (.subheading--hero)
+           3 - Get started (.hero-header .cta-button)
+           4 - Supercharging your clinical photography... (.logos-header)
+           5 - Camera logos (.camera-logos-showcase .camera-logo-btn - together)
+        */
+
+        /* Cinematic Hero Heading Entrance - Ultra Smooth & Hardware Accelerated */
+        .hero-heading {
+          opacity: 0;
+          transform: translate3d(0, 18px, 0);
+          will-change: opacity, transform;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          transition: opacity 1.3s cubic-bezier(0.22, 1, 0.36, 1),
+                      transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        body.is-loaded .hero-heading {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+          transition-delay: 0.04s;
+        }
+
+        /* Subsequent elements */
+        .subheading.subheading--hero,
+        .hero-header .cta-button,
+        .logos-header,
+        .camera-logo-btn {
+          opacity: 0;
+          transform: translateY(14px);
+          filter: blur(3px);
+          transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                      transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                      filter 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Order 2: Subheading */
+        body.is-loaded .subheading.subheading--hero {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+          transition-delay: 0.28s;
+        }
+
+        /* Order 3: Get Started Button */
+        body.is-loaded .hero-header .cta-button {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+          transition-delay: 0.44s;
+        }
+
+        /* Order 4: Supercharging your clinical photography heading */
+        body.is-loaded .logos-header {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+          transition-delay: 0.60s;
+        }
+
+        /* Order 5: Camera logos all fade in together */
+        body.is-loaded .camera-logo-btn {
+          opacity: 0.85;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+          transition-delay: 0.76s;
+        }
+
+        /* Camera Logos Showcase */
+        .camera-logos-showcase {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: nowrap;
+          gap: clamp(24px, 3.8vw, 48px);
+          max-width: 1100px;
+          margin: 32px auto 0;
+          padding: 10px 16px;
+        }
+
+        .camera-logo-btn {
+          background: transparent;
+          border: none;
+          padding: 6px 10px;
+          margin: 0;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          outline: none;
+          border-radius: 8px;
+          transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                      filter 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                      background-color 0.25s ease;
+        }
+
+        .camera-logo-img {
+          display: block;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                      filter 0.3s ease,
+                      opacity 0.3s ease;
+          pointer-events: none;
+        }
+
+        .camera-logo-img.logo-sony {
+          max-height: 20px;
+        }
+        .camera-logo-img.logo-canon {
+          max-height: 24px;
+        }
+        .camera-logo-img.logo-nikon {
+          max-height: 25px;
+        }
+        .camera-logo-img.logo-lumix {
+          max-height: 20px;
+        }
+        .camera-logo-img.logo-fuji {
+          max-height: 20px;
+        }
+
+        .camera-logo-btn:hover {
+          opacity: 1 !important;
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        .camera-logo-btn:hover .camera-logo-img {
+          transform: translateY(-2px) scale(1.08);
+          filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.65));
+        }
+
+
+
+        .horizon-pulse-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #a855f7;
+          box-shadow: 0 0 10px #a855f7;
+          display: inline-block;
+          animation: horizonPulse 2s infinite;
+        }
+
+        @keyframes horizonPulse {
+          0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.45;
+            transform: scale(0.85);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .camera-logos-showcase {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 32px;
+            margin-top: 24px;
+            padding: 8px 12px;
+          }
+          .camera-logo-btn {
+            padding: 6px 12px;
+          }
+          .camera-logo-img.logo-sony { max-height: 20px; }
+          .camera-logo-img.logo-canon { max-height: 24px; }
+          .camera-logo-img.logo-nikon { max-height: 25px; }
+          .camera-logo-img.logo-lumix { max-height: 20px; }
+          .camera-logo-img.logo-fuji { max-height: 20px; }
+        }
+
+        /* How It Works Timeline Animated Connectors */
+        .scoll-wrap {
+          overflow: hidden !important;
+        }
+        .scoll-wrap .scroll-animate {
+          transform-origin: 50% 0 !important;
+          will-change: transform;
+          transition: none !important;
+        }
+
+        /* Privacy & Security Cloud Storage Feature Section */
+        .privacy-cloud-showcase {
+          max-width: 1120px;
+          margin: 60px auto 0;
+          padding: 0 16px;
+          position: relative;
+          z-index: 2;
+        }
+
+        .privacy-cloud-card {
+          position: relative;
+          background: radial-gradient(120% 120% at 50% 0%, rgba(30, 27, 75, 0.45) 0%, rgba(10, 12, 26, 0.85) 60%, rgba(7, 9, 20, 0.95) 100%);
+          border: 1px solid rgba(139, 92, 246, 0.22);
+          border-radius: 28px;
+          padding: 56px 48px 52px;
+          box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8), 0 0 60px -15px rgba(124, 58, 237, 0.15);
+          overflow: hidden;
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Modern 3D Tilt-to-Flat Hero Video Placeholder Component (Under Get Started) */
+        .hero-video-placeholder-wrap {
+          width: 100%;
+          max-width: 1100px;
+          margin: 54px auto 0;
+          padding: 20px 0 40px;
+          position: relative;
+          z-index: 3;
+          perspective: 1200px;
+          -webkit-perspective: 1200px;
+        }
+
+        /* Ambient Neon Backdrop Glow */
+        .hero-video-ambient-glow {
+          position: absolute;
+          inset: -12% -8%;
+          background: radial-gradient(ellipse at 50% 30%, rgba(79, 70, 229, 0.28) 0%, rgba(124, 58, 237, 0.18) 40%, transparent 70%);
+          filter: blur(50px);
+          pointer-events: none;
+          z-index: 0;
+          opacity: 0.95;
+        }
+
+        /* 3D Tilt-to-Flat Card Container */
+        .hero-video-placeholder-card {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          min-height: 480px;
+          background: #05050c;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 16px;
+          box-shadow: 0 35px 90px -20px rgba(0, 0, 0, 0.9), 0 0 70px -15px rgba(79, 70, 229, 0.25);
+          overflow: hidden;
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          transform-style: preserve-3d;
+          -webkit-transform-style: preserve-3d;
+          will-change: transform;
+          /* Default initial 3D pitched state */
+          transform: rotateX(24deg) scale(0.9);
+          transform-origin: center top;
+        }
+
+        /* Schematic Blueprint Wireframe Layer (glowing structural hierarchy) */
+        .hero-video-schematic {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 5;
+          opacity: 1;
+          will-change: opacity;
+          border-radius: 16px;
+          overflow: hidden;
+        }
+
+        .hero-video-schematic-svg {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+
+        /* Central product mockup UI (cross-fades from low opacity to 1.0) */
+        .hero-video-mockup-content {
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 36px 28px;
+          text-align: center;
+          opacity: 0.1;
+          will-change: opacity;
+          background: radial-gradient(100% 100% at 50% 15%, rgba(30, 27, 75, 0.45) 0%, rgba(10, 12, 26, 0.95) 75%, #05050c 100%);
+        }
+
+        .hero-video-play-btn {
+          position: relative;
+          z-index: 3;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: rgba(168, 85, 247, 0.18);
+          border: 1px solid rgba(168, 85, 247, 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          margin-bottom: 22px;
+          box-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+
+        .hero-video-placeholder-card:hover .hero-video-play-btn {
+          transform: scale(1.08);
+          background: rgba(168, 85, 247, 0.3);
+          box-shadow: 0 0 50px rgba(168, 85, 247, 0.55);
+        }
+
+        .hero-video-play-icon {
+          width: 28px;
+          height: 28px;
+          margin-left: 4px;
+          fill: #ffffff;
+        }
+
+        .hero-video-tag {
+          display: inline-block;
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #c084fc;
+          background: rgba(168, 85, 247, 0.12);
+          border: 1px solid rgba(168, 85, 247, 0.3);
+          padding: 4px 14px;
+          border-radius: 999px;
+          margin-bottom: 12px;
+        }
+
+        .hero-video-title {
+          font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+          font-weight: 700;
+          color: #ffffff;
+          margin: 0 0 10px;
+          letter-spacing: -0.02em;
+        }
+
+        .hero-video-desc {
+          font-size: clamp(0.88rem, 1.25vw, 1rem);
+          color: #94a3b8;
+          max-width: 480px;
+          margin: 0;
+          line-height: 1.55;
+        }
+
+        @media (max-width: 768px) {
+          .hero-video-placeholder-wrap {
+            margin-top: 36px;
+            padding: 10px 0 20px;
+          }
+          .hero-video-placeholder-card {
+            aspect-ratio: 16 / 10;
+            min-height: 380px;
+            border-radius: 14px;
+          }
+          .hero-video-play-btn {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+          }
+          .hero-video-play-icon {
+            width: 22px;
+            height: 22px;
+          }
+        }
+
+        .privacy-cloud-card::before {
+          content: "";
+          position: absolute;
+          top: -1px;
+          left: 15%;
+          right: 15%;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.8), transparent);
+        }
+
+        .privacy-cloud-tag {
+          text-align: center;
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: #a855f7;
+          margin-bottom: 22px;
+        }
+
+        .privacy-cloud-title {
+          font-family: inherit;
+          font-size: clamp(2rem, 4.2vw, 3.4rem);
+          font-weight: 700;
+          line-height: 1.15;
+          text-align: center;
+          letter-spacing: -0.03em;
+          color: #ffffff;
+          margin: 0 auto 20px;
+          max-width: 820px;
+        }
+
+        .privacy-cloud-desc {
+          font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+          line-height: 1.65;
+          text-align: center;
+          color: #94a3b8;
+          max-width: 740px;
+          margin: 0 auto 36px;
+        }
+
+        .cloud-pills-row {
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+          margin-bottom: 36px;
+          flex-wrap: wrap;
+        }
+
+        .cloud-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 14px 32px;
+          border-radius: 14px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.09);
+          color: #f1f5f9;
+          font-size: 0.98rem;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          transition: all 0.25s ease;
+          text-decoration: none;
+        }
+
+        .cloud-pill:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(168, 85, 247, 0.4);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 24px -6px rgba(124, 58, 237, 0.25);
+          color: #ffffff;
+        }
+
+        .cloud-pill-icon {
+          width: 22px;
+          height: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .privacy-features-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+          margin-top: 10px;
+        }
+
+        .privacy-feature-card {
+          background: rgba(15, 20, 38, 0.65);
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          border-radius: 16px;
+          padding: 26px 28px;
+          transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+        }
+
+        .privacy-feature-card:hover {
+          border-color: rgba(168, 85, 247, 0.3);
+          background: rgba(20, 26, 48, 0.85);
+          transform: translateY(-2px);
+        }
+
+        .privacy-feature-title {
+          font-size: 1.12rem;
+          font-weight: 700;
+          color: #ffffff;
+          margin: 0 0 10px;
+          letter-spacing: -0.01em;
+        }
+
+        .privacy-feature-body {
+          font-size: 0.92rem;
+          line-height: 1.55;
+          color: #94a3b8;
+          margin: 0;
+        }
+
+        @media (max-width: 768px) {
+          .privacy-cloud-card {
+            padding: 38px 22px 32px;
+            border-radius: 22px;
+          }
+          .cloud-pill {
+            padding: 12px 22px;
+            font-size: 0.92rem;
+            width: 100%;
+            justify-content: center;
+          }
+          .privacy-features-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+          .privacy-feature-card {
+            padding: 20px 20px;
+          }
+        }
+
+        .camera-modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(5, 7, 15, 0.82);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          z-index: 99999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .camera-modal-overlay.is-open {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+
+        .camera-modal-card {
+          background: #0b0f1e;
+          border: 1px solid rgba(139, 92, 246, 0.3);
+          box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(124, 58, 237, 0.15);
+          border-radius: 20px;
+          max-width: 760px;
+          width: 100%;
+          max-height: 88vh;
+          overflow-y: auto;
+          padding: 32px;
+          color: #ffffff;
+          position: relative;
+          transform: translateY(20px) scale(0.97);
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .camera-modal-overlay.is-open .camera-modal-card {
+          transform: translateY(0) scale(1);
+        }
+
+        .camera-modal-header {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 16px;
+          margin-bottom: 24px;
+        }
+
+        .camera-modal-tag {
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          color: #a855f7;
+          margin-bottom: 8px;
+          display: inline-block;
+        }
+
+        .camera-modal-title {
+          font-size: 1.45rem;
+          font-weight: 600;
+          line-height: 1.25;
+          margin: 0 0 8px 0;
+          color: #ffffff;
+        }
+
+        .camera-modal-desc {
+          color: #94a3b8;
+          font-size: 0.88rem;
+          line-height: 1.5;
+          margin: 0;
+        }
+
+        .camera-modal-close {
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: #94a3b8;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.3rem;
+          cursor: pointer;
+          flex-shrink: 0;
+          transition: all 0.2s ease;
+        }
+
+        .camera-modal-close:hover {
+          background: rgba(255, 255, 255, 0.15);
+          color: #ffffff;
+          transform: rotate(90deg);
+        }
+
+        .camera-modal-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+          margin-bottom: 24px;
+        }
+
+        @media (max-width: 640px) {
+          .camera-modal-grid {
+            grid-template-columns: 1fr;
+          }
+          .camera-modal-card {
+            padding: 22px;
+          }
+        }
+
+        .camera-card {
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 14px;
+          padding: 18px;
+          transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .camera-card:hover {
+          background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(167, 139, 250, 0.35);
+        }
+
+        .camera-card-top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+
+        .camera-card-icon {
+          font-size: 1.25rem;
+        }
+
+        .camera-card-status {
+          font-size: 0.72rem;
+          font-weight: 600;
+          padding: 3px 8px;
+          border-radius: 999px;
+          background: rgba(168, 85, 247, 0.15);
+          color: #c084fc;
+          border: 1px solid rgba(168, 85, 247, 0.25);
+        }
+
+        .camera-card-name {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #f1f5f9;
+          margin: 0 0 4px 0;
+        }
+
+        .camera-card-brands {
+          font-size: 0.78rem;
+          font-weight: 500;
+          color: #a78bfa;
+          margin: 0 0 8px 0;
+        }
+
+        .camera-card-details {
+          font-size: 0.82rem;
+          color: #94a3b8;
+          line-height: 1.45;
+          margin: 0;
+        }
+
+        .camera-modal-footer {
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          border-radius: 12px;
+          padding: 16px 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .camera-footer-text {
+          font-size: 0.84rem;
+          color: #94a3b8;
+          max-width: 440px;
+        }
+
+        .camera-footer-btn {
+          background: linear-gradient(135deg, #7c3aed, #6366f1);
+          color: #ffffff;
+          padding: 8px 16px;
+          border-radius: 8px;
+          font-size: 0.84rem;
+          font-weight: 600;
+          text-decoration: none;
+          display: inline-block;
+          transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .camera-footer-btn:hover {
+          opacity: 0.92;
+          transform: translateY(-1px);
+        }
       </style>
     </div>
     <div class="animations-css w-embed">
       <style>
-        .hero-header .hero-heading {
-          -webkit-animation: fadeIn 1000ms backwards;
-          animation: fadeIn 1000ms backwards;
-        }
 
-        .hero-header .subheading {
-          -webkit-animation: fadeIn 1200ms backwards;
-          animation: fadeIn 1200ms backwards;
-          -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
-        }
-
-        .hero-header .cta-button {
-          -webkit-animation: fadeIn 1200ms backwards;
-          animation: fadeIn 1200ms backwards;
-          -webkit-animation-delay: 800ms;
-          animation-delay: 800ms;
-        }
 
         @-webkit-keyframes fadeIn {
           from {
             opacity: 0;
-            -webkit-transform: translateY(-10px);
-            -ms-transform: translateY(-10px);
-            transform: translateY(-10px);
+            -webkit-transform: translateY(16px);
+            transform: translateY(16px);
           }
 
           to {
             opacity: 1;
             -webkit-transform: none;
-            -ms-transform: none;
             transform: none;
           }
         }
@@ -489,15 +1184,11 @@
         @keyframes fadeIn {
           from {
             opacity: 0;
-            -webkit-transform: translateY(-10px);
-            -ms-transform: translateY(-10px);
-            transform: translateY(-10px);
+            transform: translateY(16px);
           }
 
           to {
             opacity: 1;
-            -webkit-transform: none;
-            -ms-transform: none;
             transform: none;
           }
         }
@@ -782,8 +1473,8 @@
               <a href="about.html" class="nav-link w-inline-block">
                 <div class="text-block-11">About</div>
               </a>
-              <a href="agreements.html" class="nav-link w-inline-block">
-                <div>Legal & Compliance</div>
+              <a href="privacy.html" class="nav-link w-inline-block">
+                <div>Privacy</div>
               </a>
             </div>
             <div class="nav-btns">
@@ -812,19 +1503,83 @@
                   </svg></div>
               </a>
             </div>
-            <div class="hero-img-wrap">
-              <div class="hero-img-target">
-                <div id="w-node-_2548d445-5cac-d907-4cc4-e0e179a3c909-2e7d93b4" class="hero-img-blur"></div>
-                <div id="w-node-e5f17ebd-e03a-b780-1243-8d064c472342-2e7d93b4" class="hero-img-bg"></div>
-                <div id="w-node-_6f428898-e82f-266b-c4c2-ad14c706aaf7-2e7d93b4" class="hero-img-lines w-embed"><svg
-                    width="100%" viewbox="0 0 1499 778" fill="none" class="hero-lines">
-                    <path pathlength="1" d="M1500 72L220 72"></path>
-                    <path pathlength="1" d="M1500 128L220 128"></path>
-                    <path pathlength="1" d="M1500 189L220 189"></path>
-                    <path pathlength="1" d="M220 777L220 1"></path>
-                    <path pathlength="1" d="M538 777L538 128"></path>
-                  </svg></div><img src="images/Dashboard-1-1-copy.png" loading="lazy" height="2175" width="3840" alt=""
-                  id="w-node-_76e33c5a-9def-c984-8b4d-095f3f0ecdb2-2e7d93b4" class="hero-img">
+            <!-- Modern 3D Tilt-to-Flat Product Mockup / Video Placeholder Component -->
+            <div class="hero-video-placeholder-wrap" id="heroVideoWrap">
+              <div class="hero-video-ambient-glow" aria-hidden="true"></div>
+
+              <div class="hero-video-placeholder-card" id="heroVideoCard">
+                <!-- Schematic Blueprint Wireframe Layer (glowing 1px structural hierarchy) -->
+                <div class="hero-video-schematic" id="heroVideoSchematic" aria-hidden="true">
+                  <svg class="hero-video-schematic-svg" viewBox="0 0 1000 562" preserveAspectRatio="none" fill="none">
+                    <defs>
+                      <pattern id="videoSchematicGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(140, 120, 255, 0.12)" stroke-width="1"/>
+                      </pattern>
+                      <linearGradient id="videoSchematicLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="rgba(168, 85, 247, 0)"/>
+                        <stop offset="30%" stop-color="rgba(168, 85, 247, 0.6)"/>
+                        <stop offset="70%" stop-color="rgba(124, 58, 237, 0.75)"/>
+                        <stop offset="100%" stop-color="rgba(168, 85, 247, 0)"/>
+                      </linearGradient>
+                    </defs>
+
+                    <!-- Background Blueprint Grid -->
+                    <rect width="1000" height="562" fill="url(#videoSchematicGrid)"/>
+
+                    <!-- App Top Header Bar Boundary -->
+                    <rect x="0" y="0" width="1000" height="52" fill="none" stroke="rgba(140, 120, 255, 0.35)" stroke-width="1"/>
+                    <circle cx="28" cy="26" r="5" fill="rgba(239, 68, 68, 0.6)"/>
+                    <circle cx="44" cy="26" r="5" fill="rgba(245, 158, 11, 0.6)"/>
+                    <circle cx="60" cy="26" r="5" fill="rgba(16, 185, 129, 0.6)"/>
+                    <line x1="120" y1="26" x2="300" y2="26" stroke="rgba(140, 120, 255, 0.35)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                    <rect x="740" y="14" width="230" height="24" rx="12" stroke="rgba(140, 120, 255, 0.4)" stroke-width="1"/>
+
+                    <!-- App Left Sidebar Boundary -->
+                    <rect x="0" y="52" width="220" height="510" fill="none" stroke="rgba(140, 120, 255, 0.35)" stroke-width="1"/>
+                    <!-- Sidebar Nav Items Blueprint -->
+                    <line x1="24" y1="88" x2="180" y2="88" stroke="rgba(140, 120, 255, 0.4)" stroke-width="2"/>
+                    <line x1="24" y1="124" x2="160" y2="124" stroke="rgba(140, 120, 255, 0.25)" stroke-width="1.5"/>
+                    <line x1="24" y1="156" x2="170" y2="156" stroke="rgba(140, 120, 255, 0.25)" stroke-width="1.5"/>
+                    <line x1="24" y1="188" x2="140" y2="188" stroke="rgba(140, 120, 255, 0.25)" stroke-width="1.5"/>
+                    <line x1="24" y1="220" x2="165" y2="220" stroke="rgba(140, 120, 255, 0.25)" stroke-width="1.5"/>
+
+                    <!-- Main Dashboard Widget Boundaries -->
+                    <!-- Top Metric Cards -->
+                    <rect x="245" y="74" width="225" height="90" rx="12" stroke="rgba(140, 120, 255, 0.35)" stroke-width="1.2"/>
+                    <rect x="490" y="74" width="225" height="90" rx="12" stroke="rgba(140, 120, 255, 0.35)" stroke-width="1.2"/>
+                    <rect x="735" y="74" width="235" height="90" rx="12" stroke="rgba(140, 120, 255, 0.35)" stroke-width="1.2"/>
+
+                    <!-- Central Photo Management Gallery Canvas -->
+                    <rect x="245" y="184" width="725" height="345" rx="14" stroke="url(#videoSchematicLineGrad)" stroke-width="1.5"/>
+                    <line x1="245" y1="230" x2="970" y2="230" stroke="rgba(140, 120, 255, 0.3)" stroke-width="1"/>
+
+                    <!-- Clinical Photo Thumbnails Wireframe Grid -->
+                    <rect x="270" y="254" width="150" height="110" rx="10" stroke="rgba(140, 120, 255, 0.4)" stroke-width="1" stroke-dasharray="4 3"/>
+                    <rect x="440" y="254" width="150" height="110" rx="10" stroke="rgba(140, 120, 255, 0.4)" stroke-width="1" stroke-dasharray="4 3"/>
+                    <rect x="610" y="254" width="150" height="110" rx="10" stroke="rgba(140, 120, 255, 0.4)" stroke-width="1" stroke-dasharray="4 3"/>
+                    <rect x="780" y="254" width="165" height="110" rx="10" stroke="rgba(140, 120, 255, 0.4)" stroke-width="1" stroke-dasharray="4 3"/>
+
+                    <rect x="270" y="384" width="150" height="110" rx="10" stroke="rgba(140, 120, 255, 0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                    <rect x="440" y="384" width="150" height="110" rx="10" stroke="rgba(140, 120, 255, 0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                    <rect x="610" y="384" width="150" height="110" rx="10" stroke="rgba(140, 120, 255, 0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                    <rect x="780" y="384" width="165" height="110" rx="10" stroke="rgba(140, 120, 255, 0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                  </svg>
+                </div>
+
+                <!-- Central Product Mockup UI Layer (Cross-fades 0.1 -> 1.0 as card levels flat) -->
+                <div class="hero-video-mockup-content" id="heroVideoContent">
+                  <div class="hero-video-play-btn" title="Watch Product Walkthrough (Coming Soon)">
+                    <svg class="hero-video-play-icon" viewBox="0 0 24 24">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </div>
+
+                  <div class="hero-video-tag">PRODUCT DEMO • COMING SOON</div>
+                  <h3 class="hero-video-title">Watch SmileShot in Action</h3>
+                  <p class="hero-video-desc">
+                    See how 60 seconds of automated indexing eliminates hours of manual photography sorting each week.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -836,22 +1591,25 @@
             <h3 class="subheading">Supercharging <strong><em>your</em></strong>  clinical photography.<span
                 class="text-color-white"> <br>Works with all major mirrorless &amp; DSLR cameras</span></h3>
           </div>
-          <div class="w-layout-grid logos-wrap">
-            <div class="logo-div"><img src="images/sony-logo.png" loading="lazy" width="117" sizes="117px" alt=""
-                srcset="images/sony-logo-p-500.png 500w, images/sony-logo.png 950w"></div>
-            <div class="logo-div"><img src="images/canon-logo.png" loading="lazy" width="113" sizes="113px" alt=""
-                srcset="images/canon-logo-p-500.png 500w, images/canon-logo-p-800.png 800w, images/canon-logo-p-1080.png 1080w, images/canon-logo-p-1600.png 1600w, images/canon-logo.png 1905w">
-            </div>
-            <div class="logo-div"><img src="images/nikon-logo.png" loading="lazy" width="95" sizes="95px" alt=""
-                srcset="images/nikon-logo-p-500.png 500w, images/nikon-logo.png 800w"></div>
-            <div class="logo-div"><img src="images/lumix-logo.webp" loading="lazy" width="108" sizes="108px" alt=""
-                srcset="images/lumix-logo-p-500.webp 500w, images/lumix-logo-p-800.webp 800w, images/lumix-logo-p-1080.webp 1080w, images/lumix-logo.webp 2568w">
-            </div>
-            <div id="w-node-_0f4ce2a9-d6ee-4453-6a7f-b35df3fd663c-2e7d93b4" class="logo-div extra"><img
-                src="images/fujifilm-logo-2.png" loading="lazy" width="128" sizes="128px" alt=""
-                srcset="images/fujifilm-logo-2-p-500.png 500w, images/fujifilm-logo-2-p-800.png 800w, images/fujifilm-logo-2-p-1080.png 1080w, images/fujifilm-logo-2-p-1600.png 1600w, images/fujifilm-logo-2.png 1785w">
-            </div>
+          <!-- Camera Logos Showcase replacing previous button with fade-in animation -->
+          <div id="cameraLogosShowcase" class="camera-logos-showcase" aria-label="Works with all major camera systems">
+            <button type="button" class="camera-logo-btn" data-brand="Sony" title="Sony - Works out of the box with SmileShot" aria-label="Sony Mirrorless and DSLR Cameras">
+              <img src="images/logos/sony-white.png" alt="Sony" class="camera-logo-img logo-sony" loading="lazy">
+            </button>
+            <button type="button" class="camera-logo-btn" data-brand="Canon" title="Canon - Works out of the box with SmileShot" aria-label="Canon Mirrorless and DSLR Cameras">
+              <img src="images/logos/canon-white.png" alt="Canon" class="camera-logo-img logo-canon" loading="lazy">
+            </button>
+            <button type="button" class="camera-logo-btn" data-brand="Nikon" title="Nikon - Works out of the box with SmileShot" aria-label="Nikon Mirrorless and DSLR Cameras">
+              <img src="images/logos/nikon-white.png" alt="Nikon" class="camera-logo-img logo-nikon" loading="lazy">
+            </button>
+            <button type="button" class="camera-logo-btn" data-brand="Lumix" title="Lumix - Works out of the box with SmileShot" aria-label="Panasonic Lumix Mirrorless Cameras">
+              <img src="images/logos/lumix-white.png" alt="Lumix" class="camera-logo-img logo-lumix" loading="lazy">
+            </button>
+            <button type="button" class="camera-logo-btn" data-brand="Fujifilm" title="Fujifilm - Works out of the box with SmileShot" aria-label="Fujifilm Mirrorless and Medium Format Cameras">
+              <img src="images/logos/fujifilm-white.png" alt="Fujifilm" class="camera-logo-img logo-fuji" loading="lazy">
+            </button>
           </div>
+
         </div>
       </section>
       <div class="stars-curve">
@@ -867,6 +1625,7 @@
             <h2 class="heading-medium">The future of clinical photography management</h2>
           </div>
           <div class="feature-grid-copy">
+            <!-- 1. Top Left -->
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992e92-2e7d93b4" class="feature-grid-item">
               <div class="feature-grid-icon w-embed"><svg width="15" height="14" viewbox="0 0 15 14"
                   fill="currentColor">
@@ -874,286 +1633,139 @@
                     d="M11.0002 6C13.2094 6 15.0002 7.79086 15.0002 10C15.0002 12.2091 13.2094 14 11.0002 14C8.79111 14 7.00024 12.2091 7.00024 10C7.00024 7.79086 8.79111 6 11.0002 6ZM10.7461 0C12.8172 0 14.4961 1.67893 14.4961 3.75V4.24561C14.4961 4.65982 14.1603 4.99561 13.7461 4.99561C13.3319 4.99561 12.9961 4.65982 12.9961 4.24561V3.75C12.9961 2.50736 11.9887 1.5 10.7461 1.5H4.74609C3.50345 1.5 2.49609 2.50736 2.49609 3.75V9.97046C2.49609 11.2131 3.50345 12.2205 4.74609 12.2205H6.05259C6.46681 12.2205 6.80259 12.5562 6.80259 12.9705C6.80259 13.3847 6.46681 13.7205 6.05259 13.7205H4.74609C2.67503 13.7205 0.996094 12.0415 0.996094 9.97046V3.75C0.996094 1.67893 2.67503 0 4.74609 0H10.7461ZM11.0002 7.25488L10.8985 7.26173C10.5657 7.30688 10.3022 7.57032 10.2571 7.90311L10.2502 8.00488V9.25088L9.00104 9.25L8.89926 9.25674C8.56642 9.30153 8.3027 9.56469 8.2572 9.89744L8.25024 9.9992L8.25698 10.101C8.30178 10.4338 8.56494 10.6975 8.89769 10.743L8.99945 10.75L10.2502 10.7509V12.0036L10.2571 12.1054C10.3022 12.4382 10.5657 12.7016 10.8985 12.7468L11.0002 12.7536L11.102 12.7468C11.4348 12.7016 11.6982 12.4382 11.7434 12.1054L11.7502 12.0036V10.7529L12.9994 10.7542L13.1012 10.7475C13.4341 10.7027 13.6978 10.4395 13.7433 10.1068L13.7502 10.005L13.7435 9.90326C13.6987 9.57042 13.4355 9.3067 13.1028 9.2612L13.001 9.25424L11.7502 9.25288V8.00488L11.7434 7.90311C11.6982 7.57032 11.4348 7.30688 11.102 7.26173L11.0002 7.25488Z">
                   </path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Automated Photo Organisation.</span> Never worry
-                about SD cards or sorting files again—automatically organise captures and save 3+ hours every month.</div>
+              <div class="display-inline"><span class="text-color-white">Automated Photo Organisation.</span> Drag and drop from SD card and we handle the rest.</div>
             </div>
+            <!-- 2. Top Middle -->
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992e98-2e7d93b4" class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 16 16"
-                  fill="currentColor">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M14.9408 8.91426L12.9576 8.65557C12.9855 8.4419 13 8.22314 13 8C13 7.77686 12.9855 7.5581 12.9576 7.34443L14.9408 7.08573C14.9799 7.38496 15 7.69013 15 8C15 8.30987 14.9799 8.61504 14.9408 8.91426ZM14.4688 5.32049C14.2328 4.7514 13.9239 4.22019 13.5538 3.73851L11.968 4.95716C12.2328 5.30185 12.4533 5.68119 12.6214 6.08659L14.4688 5.32049ZM12.2615 2.4462L11.0428 4.03204C10.6981 3.76716 10.3188 3.54673 9.91341 3.37862L10.6795 1.53116C11.2486 1.76715 11.7798 2.07605 12.2615 2.4462ZM8.91426 1.05917L8.65557 3.04237C8.4419 3.01449 8.22314 3 8 3C7.77686 3 7.5581 3.01449 7.34443 3.04237L7.08574 1.05917C7.38496 1.02013 7.69013 1 8 1C8.30987 1 8.61504 1.02013 8.91426 1.05917ZM5.32049 1.53116L6.08659 3.37862C5.68119 3.54673 5.30185 3.76716 4.95716 4.03204L3.73851 2.4462C4.22019 2.07605 4.7514 1.76715 5.32049 1.53116ZM2.4462 3.73851L4.03204 4.95716C3.76716 5.30185 3.54673 5.68119 3.37862 6.08659L1.53116 5.32049C1.76715 4.7514 2.07605 4.22019 2.4462 3.73851ZM1.05917 7.08574C1.02013 7.38496 1 7.69013 1 8C1 8.30987 1.02013 8.61504 1.05917 8.91426L3.04237 8.65557C3.01449 8.4419 3 8.22314 3 8C3 7.77686 3.01449 7.5581 3.04237 7.34443L1.05917 7.08574ZM1.53116 10.6795L3.37862 9.91341C3.54673 10.3188 3.76716 10.6981 4.03204 11.0428L2.4462 12.2615C2.07605 11.7798 1.76748 11.2486 1.53116 10.6795ZM3.73851 13.5538L4.95716 11.968C5.30185 12.2328 5.68119 12.4533 6.08659 12.6214L5.32049 14.4688C4.7514 14.2328 4.22019 13.9239 3.73851 13.5538ZM7.08574 14.9408L7.34443 12.9576C7.5581 12.9855 7.77686 13 8 13C8.22314 13 8.4419 12.9855 8.65557 12.9576L8.91427 14.9408C8.61504 14.9799 8.30987 15 8 15C7.69013 15 7.38496 14.9799 7.08574 14.9408ZM10.6795 14.4688L9.91341 12.6214C10.3188 12.4533 10.6981 12.2328 11.0428 11.968L12.2615 13.5538C11.7798 13.9239 11.2486 14.2328 10.6795 14.4688ZM13.5538 12.2615L11.968 11.0428C12.2328 10.6981 12.4533 10.3188 12.6214 9.91341L14.4688 10.6795C14.2328 11.2486 13.924 11.7798 13.5538 12.2615Z">
-                  </path>
+              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Bring Your Own Storage.</span> Connect Google
-                Drive, OneDrive, or Dropbox with zero raw image hosting on our servers.</div>
+              <div class="display-inline"><span class="text-color-white">Your Data Stays Yours.</span> Photos stored in YOUR Cloud storage—Google Drive, OneDrive, and Dropbox integrated.</div>
             </div>
+            <!-- 3. Top Right -->
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992e9e-2e7d93b4" class="feature-grid-item">
               <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2">
-                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Offline Local Folders.</span> Works completely
-                offline. Organise captures straight into local watch folders and cloud sync.</div>
+              <div class="display-inline"><span class="text-color-white">Offline Upload.</span> No laggy waits via our offline desktop agent.</div>
             </div>
+            <!-- 4. Bottom Left -->
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992ea4-2e7d93b4" class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 16 16"
-                  fill="currentColor">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.6541 10.7952L14.7544 11.6213C14.8576 11.6618 14.9394 11.7434 14.9801 11.8466C15.0511 12.0264 14.9828 12.2268 14.827 12.3284L14.755 12.3656L8.35645 14.8924C8.15935 14.9703 7.94372 14.9831 7.74052 14.9309L7.62035 14.8918L1.25259 12.3653C1.1499 12.3246 1.06864 12.2432 1.02806 12.1404C0.957068 11.9607 1.02536 11.7603 1.1812 11.6587L1.25319 11.6215L3.34307 10.7962L7.06917 12.2751C7.65895 12.5091 8.31525 12.5097 8.9054 12.2766L12.6541 10.7952ZM12.6541 6.77688L14.7544 7.60289C14.8576 7.64346 14.9394 7.72508 14.9801 7.82824C15.0511 8.00803 14.9828 8.20839 14.827 8.31004L14.755 8.3472L10.6001 9.98825L9.619 10.375L8.35645 10.8741L8.317 10.886L8.23566 10.9132C8.20301 10.9215 8.17004 10.9282 8.13688 10.9331C8.12585 10.9346 8.11547 10.936 8.10507 10.9372C8.02541 10.9468 7.94422 10.9464 7.86397 10.9363L7.74052 10.9126L7.62035 10.8735L6.391 10.385L5.38907 9.98825L1.25259 8.34697C1.1499 8.30623 1.06864 8.22483 1.02806 8.12208C0.957068 7.94229 1.02536 7.74192 1.1812 7.64029L1.25319 7.60312L3.34307 6.77788L7.06917 8.25677C7.65895 8.49078 8.31525 8.4913 8.9054 8.25824L12.6541 6.77688ZM7.62186 1.06989C7.85734 0.976906 8.11932 0.976697 8.35494 1.06931L14.7544 3.58452C14.8576 3.62509 14.9394 3.70671 14.9801 3.80987C15.0612 4.01534 14.9605 4.24769 14.755 4.32884L10.6001 5.96988L8.35565 6.856L8.27468 6.88396C8.25405 6.8901 8.23326 6.89557 8.21236 6.90036C8.09824 6.92674 7.98013 6.93258 7.86397 6.91788L7.74052 6.89419L7.62035 6.8551L1.25259 4.3286C1.1499 4.28786 1.06864 4.20646 1.02806 4.10371C0.946925 3.89823 1.04772 3.66589 1.25319 3.58475L7.62186 1.06989Z">
-                  </path>
+              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Automatic Patient Folders.</span> Auto-detect
-                patient sessions and structure folders without manual renaming.</div>
+              <div class="display-inline"><span class="text-color-white">Share Photos Securely.</span> Share photos securely with patients, labs and colleagues.</div>
             </div>
+            <!-- 5. Bottom Middle -->
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992eaa-2e7d93b4" class="feature-grid-item">
               <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                  <path d="m9 14 2 2 4-4"></path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">Frontend Web Dashboard.</span> Clean web
-                application to browse patient timelines and high-res photo galleries.</div>
+              <div class="display-inline"><span class="text-color-white">Digital Consent Forms.</span> Streamlined chairside digital photo consent and patient release tracking.</div>
             </div>
+            <!-- 6. Bottom Right -->
             <div id="w-node-_2d064f68-60d3-ef35-7185-764221992eb0-2e7d93b4" class="feature-grid-item">
-              <div class="feature-grid-icon w-embed"><svg width="14" height="14" viewbox="0 0 14 14"
-                  fill="currentColor">
-                  <path
-                    d="M10.25 0C12.3211 0 14 1.67893 14 3.75V8.60502C14 9.07085 13.8143 9.51745 13.484 9.84591L9.81859 13.4909C9.49069 13.817 9.04705 14 8.58461 14H3.75C1.67893 14 0 12.3211 0 10.25V3.75C0 1.67893 1.67893 0 3.75 0H10.25ZM10.25 1.5H3.75C2.50736 1.5 1.5 2.50736 1.5 3.75V10.25C1.5 11.4926 2.50736 12.5 3.75 12.5H6.999L7 9.75C7 8.28747 8.1417 7.0916 9.58248 7.00502L9.75 7H12.5V3.75C12.5 2.50736 11.4926 1.5 10.25 1.5ZM12.5 8.5H9.75C9.05964 8.5 8.5 9.05964 8.5 9.75L8.499 12.5H8.58461C8.65068 12.5 8.71405 12.4739 8.7609 12.4273L12.4263 8.78229C12.4735 8.73537 12.5 8.67157 12.5 8.60502V8.5Z">
-                  </path>
+              <div class="feature-grid-icon w-embed"><svg width="16" height="16" viewbox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg></div>
-              <div class="display-inline"><span class="text-color-white">UK GDPR &amp; DPA Ready.</span> Bank-grade TLS
-                1.3 &amp; AES-256 encryption engineered strictly for dental teams.<br></div>
+              <div class="display-inline"><span class="text-color-white">Bank Grade Encryption.</span> Full UK GDPR compliance with TLS 1.3 &amp; AES-256 encryption.</div>
             </div>
           </div>
-        </div>
-        <div class="highlights-wrap">
-          <div id="w-node-_8eee35df-ad3d-02c4-63b6-4e63ab5fde44-2e7d93b4" class="highlights-card"><img
-              src="images/068bb04f-707a-4a86-b4fb-9991887fdf91.png" loading="lazy" width="248"
-              sizes="(max-width: 479px) 100vw, 248px" alt=""
-              srcset="images/068bb04f-707a-4a86-b4fb-9991887fdf91-p-500.png 500w, images/068bb04f-707a-4a86-b4fb-9991887fdf91.png 588w"
-              class="image-5 extra">
-            <div class="keyboard"></div>
-            <div class="keyboard-shortcuts"></div>
-            <div class="highlights-card-content">
-              <h3 class="card-heading text-color-white">Built for your workflow</h3>
-              <div class="text-block-7">SmileShot fits around how you work, not the other way around.<br></div>
-            </div>
-          </div>
-          <div id="w-node-f90bbaf5-7be7-e276-9a51-f5d1a05c32fe-2e7d93b4" class="highlights-card">
-            <div class="lightning"></div>
-            <div class="highlights-card-content">
-              <h3 class="card-heading text-color-white">From chaos to clarity. Instantly.</h3>
-              <div class="text-block-8">Every image organised, sorted, and synced with zero manual steps.<br></div>
-            </div>
-          </div>
-          <div id="w-node-_034c70b5-52e0-92db-2718-a55361774349-2e7d93b4" class="highlights-card">
-            <div class="highlights-card-logo w-embed"><svg viewbox="0 0 557 557" width="557" height="557" fill="none">
-                <g stroke-width="18" filter="url(#filter0_f_1706_102555)" opacity="0.4">
-                  <path stroke="url(#paint0_linear_1706_102555)"
-                    d="M113.68 319.368c-.932-3.783 3.561-6.164 6.316-3.409l121.045 121.045c2.755 2.755.374 7.248-3.409 6.316-60.948-15.028-108.924-63.004-123.952-123.952z">
-                  </path>
-                  <path stroke="url(#paint1_linear_1706_102555)"
-                    d="M109.104 267.645a3.947 3.947 0 001.157 3.041l176.053 176.053a3.947 3.947 0 003.041 1.157 169.91 169.91 0 0022.262-2.906c3.061-.608 4.124-4.362 1.917-6.569L118.579 243.466c-2.207-2.207-5.961-1.144-6.569 1.917a169.91 169.91 0 00-2.906 22.262z">
-                  </path>
-                  <path stroke="url(#paint2_linear_1706_102555)"
-                    d="M123.521 209.3a3.94 3.94 0 00.828 4.397l218.954 218.955a3.942 3.942 0 004.397.827 168.862 168.862 0 0016.539-8.539c2.214-1.302 2.554-4.336.738-6.152L138.212 192.023c-1.816-1.816-4.85-1.476-6.152.738a169.081 169.081 0 00-8.539 16.539z">
-                  </path>
-                  <path stroke="url(#paint3_linear_1706_102555)"
-                    d="M152.384 170.657c-1.48-1.48-1.572-3.855-.173-5.412C183.262 130.715 228.284 109 278.377 109 372.057 109 448 184.943 448 278.623c0 50.093-21.715 95.115-56.245 126.166-1.557 1.399-3.931 1.307-5.412-.173L152.384 170.657z">
-                  </path>
-                </g>
-                <g stroke-opacity="0.2" stroke-width="2" opacity="0.4">
-                  <path stroke="url(#paint4_linear_1706_102555)"
-                    d="M113.68 319.368c-.932-3.783 3.561-6.164 6.316-3.409l121.045 121.045c2.755 2.755.374 7.248-3.409 6.316-60.948-15.028-108.924-63.004-123.952-123.952z">
-                  </path>
-                  <path stroke="url(#paint5_linear_1706_102555)"
-                    d="M109.104 267.645a3.947 3.947 0 001.157 3.041l176.053 176.053a3.947 3.947 0 003.041 1.157 169.91 169.91 0 0022.262-2.906c3.061-.608 4.124-4.362 1.917-6.569L118.579 243.466c-2.207-2.207-5.961-1.144-6.569 1.917a169.91 169.91 0 00-2.906 22.262z">
-                  </path>
-                  <path stroke="url(#paint6_linear_1706_102555)"
-                    d="M123.521 209.3a3.94 3.94 0 00.828 4.397l218.954 218.955a3.942 3.942 0 004.397.827 168.862 168.862 0 0016.539-8.539c2.214-1.302 2.554-4.336.738-6.152L138.212 192.023c-1.816-1.816-4.85-1.476-6.152.738a169.081 169.081 0 00-8.539 16.539z">
-                  </path>
-                  <path stroke="url(#paint7_linear_1706_102555)"
-                    d="M152.384 170.657c-1.48-1.48-1.572-3.855-.173-5.412C183.262 130.715 228.284 109 278.377 109 372.057 109 448 184.943 448 278.623c0 50.093-21.715 95.115-56.245 126.166-1.557 1.399-3.931 1.307-5.412-.173L152.384 170.657z">
-                  </path>
-                </g>
-                <path stroke="url(#paint8_linear_1706_102555)" stroke-opacity="0.2" stroke-width="8"
-                  d="M113.68 319.368c-.932-3.783 3.561-6.164 6.316-3.409l121.045 121.045c2.755 2.755.374 7.248-3.409 6.316-60.948-15.028-108.924-63.004-123.952-123.952z">
-                </path>
-                <path stroke="url(#paint9_linear_1706_102555)" stroke-opacity="0.2" stroke-width="8"
-                  d="M109.104 267.645a3.947 3.947 0 001.157 3.041l176.053 176.053a3.947 3.947 0 003.041 1.157 169.91 169.91 0 0022.262-2.906c3.061-.608 4.124-4.362 1.917-6.569L118.579 243.466c-2.207-2.207-5.961-1.144-6.569 1.917a169.91 169.91 0 00-2.906 22.262z">
-                </path>
-                <path stroke="url(#paint10_linear_1706_102555)" stroke-opacity="0.2" stroke-width="8"
-                  d="M123.521 209.3a3.94 3.94 0 00.828 4.397l218.954 218.955a3.942 3.942 0 004.397.827 168.862 168.862 0 0016.539-8.539c2.214-1.302 2.554-4.336.738-6.152L138.212 192.023c-1.816-1.816-4.85-1.476-6.152.738a169.081 169.081 0 00-8.539 16.539z">
-                </path>
-                <path stroke="url(#paint11_linear_1706_102555)" stroke-opacity="0.2" stroke-width="8"
-                  d="M152.384 170.657c-1.48-1.48-1.572-3.855-.173-5.412C183.262 130.715 228.284 109 278.377 109 372.057 109 448 184.943 448 278.623c0 50.093-21.715 95.115-56.245 126.166-1.557 1.399-3.931 1.307-5.412-.173L152.384 170.657z">
-                </path>
-                <path stroke="url(#paint12_radial_1706_102555)"
-                  d="M113.68 319.368c-.932-3.783 3.561-6.164 6.316-3.409l121.045 121.045c2.755 2.755.374 7.248-3.409 6.316-60.948-15.028-108.924-63.004-123.952-123.952z">
-                </path>
-                <path stroke="url(#paint13_radial_1706_102555)"
-                  d="M109.104 267.645a3.947 3.947 0 001.157 3.041l176.053 176.053a3.947 3.947 0 003.041 1.157 169.91 169.91 0 0022.262-2.906c3.061-.608 4.124-4.362 1.917-6.569L118.579 243.466c-2.207-2.207-5.961-1.144-6.569 1.917a169.91 169.91 0 00-2.906 22.262z">
-                </path>
-                <path stroke="url(#paint14_radial_1706_102555)"
-                  d="M123.521 209.3a3.94 3.94 0 00.828 4.397l218.954 218.955a3.942 3.942 0 004.397.827 168.862 168.862 0 0016.539-8.539c2.214-1.302 2.554-4.336.738-6.152L138.212 192.023c-1.816-1.816-4.85-1.476-6.152.738a169.081 169.081 0 00-8.539 16.539z">
-                </path>
-                <path stroke="url(#paint15_radial_1706_102555)"
-                  d="M152.384 170.657c-1.48-1.48-1.572-3.855-.173-5.412C183.262 130.715 228.284 109 278.377 109 372.057 109 448 184.943 448 278.623c0 50.093-21.715 95.115-56.245 126.166-1.557 1.399-3.931 1.307-5.412-.173L152.384 170.657z">
-                </path>
-                <defs>
-                  <lineargradient id="paint0_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="340"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#6663F6"></stop>
-                    <stop offset="1" stop-color="#6663F6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint1_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="340"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#6663F6"></stop>
-                    <stop offset="1" stop-color="#6663F6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint2_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="340"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#6663F6"></stop>
-                    <stop offset="1" stop-color="#6663F6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint3_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="340"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#6663F6"></stop>
-                    <stop offset="1" stop-color="#6663F6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint4_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="299"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#6663F6"></stop>
-                    <stop offset="1" stop-color="#6663F6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint5_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="299"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#6663F6"></stop>
-                    <stop offset="1" stop-color="#6663F6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint6_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="299"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#6663F6"></stop>
-                    <stop offset="1" stop-color="#6663F6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint7_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="299"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#6663F6"></stop>
-                    <stop offset="1" stop-color="#6663F6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint8_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="350.5"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#7877C6"></stop>
-                    <stop offset="1" stop-color="#7877C6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint9_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="350.5"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#7877C6"></stop>
-                    <stop offset="1" stop-color="#7877C6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint10_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="350.5"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#7877C6"></stop>
-                    <stop offset="1" stop-color="#7877C6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <lineargradient id="paint11_linear_1706_102555" x1="278.5" x2="278.5" y1="109" y2="350.5"
-                    gradientunits="userSpaceOnUse">
-                    <stop stop-color="#7877C6"></stop>
-                    <stop offset="1" stop-color="#7877C6" stop-opacity="0"></stop>
-                  </lineargradient>
-                  <radialgradient id="paint12_radial_1706_102555" cx="0" cy="0" r="1"
-                    gradienttransform="rotate(90 67.03 211.47) scale(233.062)" gradientunits="userSpaceOnUse">
-                    <stop stop-color="#fff"></stop>
-                    <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
-                  </radialgradient>
-                  <radialgradient id="paint13_radial_1706_102555" cx="0" cy="0" r="1"
-                    gradienttransform="rotate(90 67.03 211.47) scale(233.062)" gradientunits="userSpaceOnUse">
-                    <stop stop-color="#fff"></stop>
-                    <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
-                  </radialgradient>
-                  <radialgradient id="paint14_radial_1706_102555" cx="0" cy="0" r="1"
-                    gradienttransform="rotate(90 67.03 211.47) scale(233.062)" gradientunits="userSpaceOnUse">
-                    <stop stop-color="#fff"></stop>
-                    <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
-                  </radialgradient>
-                  <radialgradient id="paint15_radial_1706_102555" cx="0" cy="0" r="1"
-                    gradienttransform="rotate(90 67.03 211.47) scale(233.062)" gradientunits="userSpaceOnUse">
-                    <stop stop-color="#fff"></stop>
-                    <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
-                  </radialgradient>
-                  <filter id="filter0_f_1706_102555" width="556.906" height="556.904" x="0.094" y="0"
-                    color-interpolation-filters="sRGB" filterunits="userSpaceOnUse">
-                    <feflood flood-opacity="0" result="BackgroundImageFix"></feflood>
-                    <feblend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feblend>
-                    <fegaussianblur result="effect1_foregroundBlur_1706_102555" stddeviation="50"></fegaussianblur>
-                  </filter>
-                </defs>
-              </svg></div><img src="images/ChatGPT-Image-Aug-9-2025-at-02_17_14-AM.png" loading="lazy"
-              sizes="(max-width: 527px) 100vw, 527px"
-              srcset="images/ChatGPT-Image-Aug-9-2025-at-02_17_14-AM-p-500.png 500w, images/ChatGPT-Image-Aug-9-2025-at-02_17_14-AM.png 527w"
-              alt="" class="image-5">
-            <div class="highlights-card-content">
-              <h3 class="card-heading text-color-white">Your time is clinical, Let ours be operational</h3>
-              <div class="text-block-9">SmileShot handles the background work so you can stay focused on care.<br></div>
-            </div>
-          </div>
-          <div id="w-node-e9232da3-ff5a-2eff-ce6e-e78ae5744c58-2e7d93b4"
-            class="highlights-card feature-card--command-line">
-            <div tabindex="0" class="command-menu">
-              <div class="command-menu-inner">
-                <div class="command-menu-label">Restorative dentistry</div>
-                <div class="command-menu-input">Search your photos by...</div>
-                <div class="command-menu-list">
-                  <div class="command-menu-option command-menu-option--active">
-                    <div class="svg-embed w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
-                        <path
-                          d="M7 7a2.5 2.5 0 10.001-4.999A2.5 2.5 0 007 7zm0 1c-1.335 0-4 .893-4 2.667v.666c0 .367.225.667.5.667h2.049c.904-.909 2.417-1.911 4.727-2.009v-.72a.27.27 0 01.007-.063C9.397 8.404 7.898 8 7 8zm4.427 2.028a.266.266 0 01.286.032l2.163 1.723a.271.271 0 01.013.412l-2.163 1.97a.27.27 0 01-.452-.2v-.956c-3.328.133-5.282 1.508-5.287 1.535a.27.27 0 01-.266.227h-.022a.27.27 0 01-.249-.271c0-.046 1.549-3.328 5.824-3.509v-.72a.27.27 0 01.153-.243z">
-                        </path>
-                      </svg></div>
-                    <div>Patient name</div>
-                  </div>
-                  <div class="command-menu-option">
-                    <div class="svg-embed w-embed"><svg width="16" height="16" viewbox="-1 -1 15 15"
-                        fill="currentColor">
-                        <path
-                          d="M10.5714 7C10.5714 8.97245 8.97245 10.5714 7 10.5714L6.99975 3.42857C8.9722 3.42857 10.5714 5.02755 10.5714 7Z">
-                        </path>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M7 12.5C10.0376 12.5 12.5 10.0376 12.5 7C12.5 3.96243 10.0376 1.5 7 1.5C3.96243 1.5 1.5 3.96243 1.5 7C1.5 10.0376 3.96243 12.5 7 12.5ZM7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14Z">
-                        </path>
-                      </svg></div>
-                    <div>Date taken</div>
-                  </div>
-                  <div class="command-menu-option">
-                    <div class="svg-embed w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
-                        <rect x="1" y="8" width="3" height="6" rx="1"></rect>
-                        <rect x="6" y="5" width="3" height="9" rx="1"></rect>
-                        <rect x="11" y="2" width="3" height="12" rx="1"></rect>
-                      </svg></div>
-                    <div>Treatment type</div>
-                  </div>
-                  <div class="command-menu-option extra">
-                    <div class="svg-embed w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M10.2105 4C10.6337 4 11.0126 4.18857 11.24 4.48L14 8L11.24 11.52C11.0126 11.8114 10.6337 12 10.2105 12L3.26316 11.9943C2.56842 11.9943 2 11.4857 2 10.8571V5.14286C2 4.51429 2.56842 4.00571 3.26316 4.00571L10.2105 4ZM11.125 9C11.6773 9 12.125 8.55228 12.125 8C12.125 7.44772 11.6773 7 11.125 7C10.5727 7 10.125 7.44772 10.125 8C10.125 8.55228 10.5727 9 11.125 9Z">
-                        </path>
-                      </svg></div>
-                    <div>Procedure</div>
-                  </div>
-                </div>
+        </d        <!-- Privacy & Security Cloud Feature Showcase (Replaces Workflow / Highlights Cards) -->
+        <div class="privacy-cloud-showcase">
+          <div class="privacy-cloud-card">
+            <div class="privacy-cloud-tag">PRIVACY &amp; SECURITY, BY DESIGN</div>
+            <h2 class="privacy-cloud-title">
+              Your photos live in your cloud.<br>We never see them.
+            </h2>
+            <p class="privacy-cloud-desc">
+              Bank level encryption. secure. safe.
+            </p>
+
+            <div class="cloud-pills-row">
+              <div class="cloud-pill">
+                <span class="cloud-pill-icon">
+                  <svg width="20" height="18" viewBox="0 0 87.3 78" fill="none">
+                    <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8H0c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/>
+                    <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44A8.9 8.9 0 0 0 0 53h27.5z" fill="#00ac47"/>
+                    <path d="M73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5H59.8l6.1 10.55z" fill="#ea4335"/>
+                    <path d="M43.65 25 57.4 1.2C56.05.4 54.5 0 52.95 0H34.35c-1.55 0-3.1.4-4.45 1.2z" fill="#00832d"/>
+                    <path d="M59.8 53H27.5L13.75 76.8c1.35.8 2.9 1.2 4.45 1.2h50.9c1.55 0 3.1-.4 4.45-1.2z" fill="#2684fc"/>
+                    <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3L43.65 25l16.15 28h27.5c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/>
+                  </svg>
+                </span>
+                <span>Google Drive</span>
+              </div>
+
+              <div class="cloud-pill">
+                <span class="cloud-pill-icon">
+                  <svg width="18" height="18" viewBox="0 0 21 21" fill="none">
+                    <path d="M0 0h10v10H0z" fill="#f25022"/>
+                    <path d="M11 0h10v10H11z" fill="#7fba00"/>
+                    <path d="M0 11h10v10H0z" fill="#00a4ef"/>
+                    <path d="M11 11h10v10H11z" fill="#ffb900"/>
+                  </svg>
+                </span>
+                <span>OneDrive</span>
+              </div>
+
+              <div class="cloud-pill">
+                <span class="cloud-pill-icon">
+                  <svg width="20" height="18" viewBox="0 0 40 36" fill="currentColor">
+                    <path fill="#0061ff" d="m10 0-10 6.6 10 6.5 10-6.5zm20 0-10 6.6 10 6.5 10-6.5zM0 19.7l10 6.5 10-6.5-10-6.6zm30-6.6-10 6.6 10 6.5 10-6.5zM10.1 28.5 20 35l9.9-6.5-9.9-6.5z"/>
+                  </svg>
+                </span>
+                <span>Dropbox</span>
               </div>
             </div>
-            <div class="highlights-card-content feature-card-content--command-menu">
-              <h3 class="card-heading text-color-white">Your photos supercharged with Smart Search</h3>
-              <div class="text-block-10">Every patient photo is intelligently indexed the moment it’s captured.
-                Instantly retrieve images by patient name, treatment type, or date taken.<br></div>
-              <div class="text-block-10 extra">Every patient photo is intelligently indexed the moment it’s
-                captured.<br></div>
+
+            <div class="privacy-features-grid">
+              <!-- Feature 1 -->
+              <div class="privacy-feature-card">
+                <h3 class="privacy-feature-title">You own every photo</h3>
+                <p class="privacy-feature-body">
+                  Originals stay in your storage, under your account. Leave any time and your photos stay exactly where they are.
+                </p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="privacy-feature-card">
+                <h3 class="privacy-feature-title">We can't see them</h3>
+                <p class="privacy-feature-body">
+                  Zero image hosting. SmileShot has no access to the contents of your clinical photos.
+                </p>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="privacy-feature-card">
+                <h3 class="privacy-feature-title">Encrypted in transit and at rest</h3>
+                <p class="privacy-feature-body">
+                  TLS 1.3 and AES-256 encryption protect patient information end to end.
+                </p>
+              </div>
+
+              <!-- Feature 4 -->
+              <div class="privacy-feature-card">
+                <h3 class="privacy-feature-title">Built for UK dental practice</h3>
+                <p class="privacy-feature-body">
+                  UK GDPR and DPA ready, with a clear Data Processing Agreement for your practice.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-  </div>
+      </div>
   </section>
   <div id="section-how-it-works" class="section-how-it-works">
     <div class="section-header-hiw">
@@ -1176,10 +1788,6 @@
             <h3 class="card-heading text-color-white">Step 1</h3>
             <div class="text-block-6">Connect Your Practice Storage<br></div>
           </div>
-          <div class="text-block-4">Connect your practice cloud storage (Google Drive, OneDrive, or Dropbox) under our
-            Bring Your Own Storage (BYOS) model. Zero raw image files are hosted or retained on our servers—SmileShot
-            organises directly inside your own secure cloud directories.
-          </div>
         </div>
       </div>
 
@@ -1190,9 +1798,6 @@
             <h3 class="card-heading text-color-white">Step 2</h3>
             <div class="text-block-3">Capture with Any Camera<br></div>
           </div>
-          <div class="text-block-4">Capture clinical photos naturally during appointments using any DSLR, mirrorless
-            camera, intraoral device, or smartphone. SmileShot requires no proprietary hardware—exact capture timestamps
-            are automatically preserved in standard EXIF image metadata.</div>
         </div>
         <div class="scoll-wrap">
           <div class="scroll-animate"></div>
@@ -1219,10 +1824,6 @@
             <h3 class="card-heading text-color-white">Step 3</h3>
             <div class="text-block-5">Offline Companion App &amp; Auto-Sorting<br></div>
           </div>
-          <div class="text-block-4">The SmileShot Offline Desktop App runs locally on your surgery PC with zero internet
-            requirement. When an SD card is inserted or watch folder updated, it instantly matches photo timestamps to
-            your appointment schedule and structures raw photos into clean <code>Patient Name / Date / Procedure</code>
-            directories with zero lag and zero cloud dependency.</div>
         </div>
       </div>
 
@@ -1233,10 +1834,6 @@
             <h3 class="card-heading text-color-white">Step 4</h3>
             <div class="text-block-3">Frontend Web Dashboard &amp; Gallery<br></div>
           </div>
-          <div class="text-block-4">Access your organized records anytime via the SmileShot Web Platform. Search
-            patients in seconds, browse chronological case timelines, and review high-resolution photo galleries from
-            any surgery workstation or tablet—while original raw files remain safely secured in your own local or cloud
-            storage.</div>
         </div>
         <div class="scoll-wrap">
           <div class="scroll-animate"></div>
@@ -1280,15 +1877,6 @@
         <div style="margin-bottom: 16px;">
           <img src="images/smieshot2.png" alt="SmileShot Logo" width="110">
         </div>
-        <p style="color: #9da3af; font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
-          Designed by dentists, for dentists. Structure, index, and retrieve clinical dental photography with
-          machine-level precision and zero image exposure.
-        </p>
-        <p style="font-size: 0.8rem; color: #6b7280;">
-          Solid Solutions Ltd (trading as SmileShot)<br>
-          Company Registration: 6425612 (England & Wales)<br>
-          19 Linfields, Little Chalfont, Amersham, Buckinghamshire, HP7 9QH
-        </p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
@@ -1350,6 +1938,114 @@
         onLeaveBack: () => featureSection.classList.remove("visible"),
       });
     });
+
+    // Modern 3D Tilt-to-Flat & Schematic Wireframe Hero Reveal Controller
+    (function () {
+      const wrap = document.getElementById("heroVideoWrap");
+      const card = document.getElementById("heroVideoCard");
+      const schematic = document.getElementById("heroVideoSchematic");
+      const content = document.getElementById("heroVideoContent");
+
+      if (wrap && card && schematic && content) {
+        // Initial state: pitched backward 24deg, scaled 0.9, blueprint clearly visible, mockup at 0.1 opacity
+        gsap.set(card, {
+          transformPerspective: 1200,
+          transformOrigin: "center top",
+          rotationX: 24,
+          scale: 0.9,
+          force3D: true,
+        });
+        gsap.set(schematic, { opacity: 1 });
+        gsap.set(content, { opacity: 0.1 });
+
+        // Scroll progress scrubbed directly between 10% and 55% viewport travel
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: wrap,
+            start: "top 80%", // card enters viewport
+            end: "center 50%", // card levels flat as it reaches center view
+            scrub: 0.7, // smooth scrubbing interpolation
+            invalidateOnRefresh: true,
+          },
+        });
+
+        tl.to(
+          card,
+          {
+            rotationX: 0,
+            scale: 1,
+            ease: "none",
+          },
+          0
+        )
+        .to(
+          schematic,
+          {
+            opacity: 0,
+            ease: "none",
+          },
+          0
+        )
+        .to(
+          content,
+          {
+            opacity: 1,
+            ease: "none",
+          },
+          0
+        );
+      }
+    })();
+
+    // How It Works: Interactive Scrubbed Timeline Connector Lines & Dots Controller
+    // Sequentially colors in when scrolling down, and reverses back to white when scrolling back up
+    (function () {
+      const stepBlocks = Array.from(document.querySelectorAll(".steps-clone .step-block"));
+      if (!stepBlocks || stepBlocks.length === 0) return;
+
+      stepBlocks.forEach((step, index) => {
+        const line = step.querySelector(".scroll-animate");
+        const dot = step.querySelector(".dot");
+        const prevStep = index > 0 ? stepBlocks[index - 1] : null;
+
+        // Animate the vertical connector line if this step has one
+        if (line) {
+          gsap.set(line, {
+            scaleY: 0,
+            transformOrigin: "50% 0",
+            force3D: true,
+          });
+
+          // Smooth, natural scrub bound precisely to the line traversing the viewport
+          gsap.to(line, {
+            scaleY: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: line,
+              start: "top 78%",
+              end: "bottom 38%",
+              scrub: 0.8, // Smooth momentum buffer eliminating sudden rushes or lag
+              invalidateOnRefresh: true,
+            },
+          });
+        }
+
+        // Animate step dot accent glow synchronously
+        if (dot) {
+          gsap.to(dot, {
+            boxShadow: "0 0 16px rgba(168, 85, 247, 0.9)",
+            borderColor: "rgba(168, 85, 247, 0.9)",
+            scrollTrigger: {
+              trigger: step,
+              start: "top 72%",
+              end: "bottom 45%",
+              toggleActions: "play reverse play reverse", // activates on scroll down, reverses to resting state on scroll up
+            },
+          });
+        }
+      });
+    })();
+
     //Insert lightning and keyboard as inline SVGs; too many characters for embed
     const insertSVG = function (src, target) {
       fetch(src)
@@ -1381,6 +2077,139 @@
         keyEl.removeAttribute("data-pressed");
       }
     });
+  </script>
+
+  <!-- Camera Companies On The Horizon Modal -->
+  <div id="cameraModal" class="camera-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cameraModalTitle">
+    <div class="camera-modal-card">
+      <div class="camera-modal-header">
+        <div>
+          <div class="camera-modal-tag">ROADMAP PREVIEW</div>
+          <h3 id="cameraModalTitle" class="camera-modal-title">Camera &amp; Hardware on the Horizon</h3>
+          <p class="camera-modal-desc">
+            SmileShot already works out of the box with any camera that writes to an SD card (Sony, Canon, Nikon, Lumix, Fujifilm). Here are the hardware ecosystems currently in active R&amp;D:
+          </p>
+        </div>
+        <button id="closeCameraModalBtn" type="button" class="camera-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="camera-modal-grid">
+        <!-- 1. Intraoral Scanners & Cameras -->
+        <div class="camera-card">
+          <div class="camera-card-top">
+            <span class="camera-card-icon">🦷</span>
+            <span class="camera-card-status">In Development</span>
+          </div>
+          <h4 class="camera-card-name">Intraoral Cameras &amp; Scanners</h4>
+          <p class="camera-card-brands">3Shape TRIOS • Medit • Carestream Dental • iTero • DEXIS</p>
+          <p class="camera-card-details">
+            Direct 2D snapshot ingestion and 3D dental scan previews (STL/PLY) mapped straight into SmileShot patient timelines chairside.
+          </p>
+        </div>
+
+        <!-- 2. Smartphone Macro Systems -->
+        <div class="camera-card">
+          <div class="camera-card-top">
+            <span class="camera-card-icon">📱</span>
+            <span class="camera-card-status">Private Beta</span>
+          </div>
+          <h4 class="camera-card-name">Smartphone &amp; Mobile Macro Rigs</h4>
+          <p class="camera-card-brands">Apple iPhone ProRAW • Smile Lite MDP • Dentaphot • Android Macro</p>
+          <p class="camera-card-details">
+            High-speed wireless mobile photo transfer with cross-polarisation lighting support for quick orthodontic and aesthetic triage.
+          </p>
+        </div>
+
+        <!-- 3. Real-Time Wireless Tethering -->
+        <div class="camera-card">
+          <div class="camera-card-top">
+            <span class="camera-card-icon">📡</span>
+            <span class="camera-card-status">Coming Soon</span>
+          </div>
+          <h4 class="camera-card-name">Direct Wireless Tethering</h4>
+          <p class="camera-card-brands">Sony Imaging Edge • Canon Camera Connect • Nikon SnapBridge • CamFi</p>
+          <p class="camera-card-details">
+            Instant automatic sync over practice Wi-Fi as you shoot—eliminating the need to ever physically eject and transfer an SD card.
+          </p>
+        </div>
+
+        <!-- 4. Microscope & Loupe Optics -->
+        <div class="camera-card">
+          <div class="camera-card-top">
+            <span class="camera-card-icon">🔬</span>
+            <span class="camera-card-status">Exploring</span>
+          </div>
+          <h4 class="camera-card-name">Surgical Microscope &amp; Loupes</h4>
+          <p class="camera-card-brands">Carl Zeiss • Leica Microsystems • Zumax • CJ-Optik</p>
+          <p class="camera-card-details">
+            Direct 4K video frame grab and ultra-high magnification capture indexing for complex restorative and endodontic treatments.
+          </p>
+        </div>
+      </div>
+
+      <div class="camera-modal-footer">
+        <div class="camera-footer-text">
+          Have a specific camera, intraoral scanner, or surgery setup you'd like prioritised?
+        </div>
+        <a href="mailto:info@smileshot.ai?subject=Hardware%20Integration%20Request" class="camera-footer-btn">
+          Request Your Hardware &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Camera Logos Animation & Modal Interactive Controller
+    (function () {
+      // 1. Landing Page Sequential Fade-In Controller
+      function activateLandingPageSequence() {
+        document.body.classList.add("is-loaded");
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", activateLandingPageSequence);
+      } else {
+        activateLandingPageSequence();
+      }
+
+      // 2. Camera Modal Controller
+      const modal = document.getElementById("cameraModal");
+      const openBtn = document.getElementById("openCameraModalBtn");
+      const closeBtn = document.getElementById("closeCameraModalBtn");
+      const logoBtns = document.querySelectorAll(".camera-logo-btn");
+
+      function openModal() {
+        if (!modal) return;
+        modal.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+
+      if (openBtn) openBtn.addEventListener("click", openModal);
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
+      logoBtns.forEach(function (btn) {
+        btn.addEventListener("click", openModal);
+      });
+
+      if (modal) {
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
+    })();
   </script>
 </body>
 
