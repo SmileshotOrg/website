@@ -9,8 +9,11 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/smileshot-ai.webflow.css" rel="stylesheet" type="text/css">
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.png" rel="apple-touch-icon">
+  <link href="css/smileshot-landing.css?v=20261108k" rel="stylesheet" type="text/css">
+  <link href="images/favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="images/favicon-192.png" rel="icon" type="image/png" sizes="192x192">
+  <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta name="theme-color" content="#000212">
   <style>
     * {
       -webkit-font-smoothing: antialiased;
@@ -18,9 +21,9 @@
       box-sizing: border-box;
     }
     body {
-      background-color: #000212;
+      background-color: transparent;
       color: #9da3af;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.7;
@@ -31,16 +34,6 @@
     }
     a:visited {
       color: inherit;
-    }
-    .nav-link {
-      color: #ffffff !important;
-      text-decoration: none !important;
-    }
-    .nav-link:visited {
-      color: #ffffff !important;
-    }
-    .nav-link:hover {
-      color: #8a8f98 !important;
     }
     .nav-bg {
       mask-image: linear-gradient(to bottom, black 48px, transparent);
@@ -270,6 +263,7 @@
   </style>
 </head>
 <body>
+  <div class="ss-backdrop" aria-hidden="true"><div class="ss-backdrop__lift"></div></div>
   <div class="page-wrapper">
     <!-- Nav -->
     <nav class="nav">
@@ -277,27 +271,31 @@
       <div class="container page-padding">
         <div class="nav-inner">
           <div class="nav-menu-wrap">
+            <a href="index.html" class="nav-logo w-inline-block">
+              <div class="div-block"><img src="images/smieshot2.png" width="125" alt="SmileShot Logo" class="nav-logo-img"></div>
+            </a>
             <div class="nav-menu">
-              <a href="index.html" class="nav-logo w-inline-block">
-                <div class="div-block"><img src="images/smieshot2.png" loading="lazy" width="125" alt="SmileShot Logo" style="display: block; max-width: 125px; height: auto;"></div>
-              </a>
               <a href="index.html#section-features" class="nav-link w-inline-block">
                 <div>Features</div>
               </a>
               <a href="index.html#section-how-it-works" class="nav-link w-inline-block">
                 <div>How It Works</div>
               </a>
-              <a href="about.html" class="nav-link w-inline-block">
-                <div>About</div>
+              <a href="index.html#section-pricing" class="nav-link w-inline-block">
+                <div>Pricing</div>
               </a>
-              <a href="privacy.html" class="nav-link w-inline-block">
+              <a href="enterprise.html" class="nav-link w-inline-block">
+                <div>Practices</div>
+              </a>
+              <a href="about.html" class="nav-link w-inline-block">
+                <div class="text-block-11">About</div>
+              </a>
+              <a href="security.html" class="nav-link w-inline-block">
                 <div>Privacy</div>
               </a>
             </div>
             <div class="nav-btns">
-              <a href="mailto:info@smileshot.ai?subject=Register%20Interest%20in%20SmileShot" class="cta-button cta-button--nav w-inline-block">
-                <div>Register Interest</div>
-              </a>
+              <a href="https://app.smileshot.ai" class="nav-login">Login</a>
             </div>
           </div>
         </div>
@@ -564,5 +562,6 @@
       </div>
     </footer>
   </div>
+  <script src="js/smileshot-landing.js?v=20261108k" defer></script>
 </body>
 </html>
